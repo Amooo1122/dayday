@@ -1,0 +1,156 @@
+body{
+    background-color: #FDF7EF;
+    color: #423E37;   
+    font-size: 20px;
+    font-family: 'Zen Maru Gothic','AR One Sans'; 
+    letter-spacing: 2px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    color: #423E37;
+    text-decoration: none;
+    display: block;
+}
+
+a:hover{
+    color: #FFB661;
+}
+
+header{
+    padding: 15px 40px;
+    display: grid;
+    grid-template-columns:120px 1fr 120px;
+    align-items: center;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.main-nav ul{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 500;
+}
+
+.head-icon{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.highlight-o{
+    color: #FFB661;
+    font-family: 'Zen Maru Gothic','AR One Sans'; 
+}
+.highlight-g{
+    color: #8EB376 ;
+    font-family: 'Zen Maru Gothic','AR One Sans'; 
+}
+
+.breadcrumb{
+    margin: 50px auto;
+    padding: 8px 20px;
+    display: flex;
+    align-items: center;
+    background-color: #E39D4A;
+    width: 1200px;
+    border-radius: 100px;
+    gap: 6px
+}
+
+.breadcrumb-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}
+
+.breadcrumb a:hover{
+    color: #fff;
+}
+
+
+.site-footer{
+    position: relative;
+    width: 1200px;
+    margin: auto;
+}
+
+.footer-main{
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    background-color: #F4E5D0;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    justify-content: space-between;
+    padding: 30px 40px 80px;
+}
+
+.footer-main img{
+    width: 100%;    
+}
+
+.footer-nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.footer-social{
+    display: grid;
+    position: absolute;
+    width: 1120px;
+    bottom: 0px;
+    left:0;
+    grid-template-columns: 1fr 1fr;
+    background-color: #85A96E;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px ;
+}
+
+.footer-icon{
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+h1{
+    font-family: 'Zen Maru Gothic';
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: 10%;
+}
+
+
+h2{
+    font-family: 'Zen Maru Gothic';
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: 10%;
+}
+
+h3{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+h4{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+p{
+    font-size: 1.125rem;
+    line-height: 2;
+}

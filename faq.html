@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>常見問題</title>
+    <style>
+        .faq-section {
+            max-width: 720px;
+            margin: 50px auto;
+            padding: 40px 24px;
+        }
+
+            .faq-title {
+            margin-bottom: 24px;
+            color: #6DA675;
+        }
+
+            .faq-item {
+            border-bottom: 1px solid #ddd;
+            padding: 12px 0;
+            }
+
+            .faq-question {
+            background: none;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #6DA675;
+            text-align: left;
+            width: 100%;
+            cursor: pointer;
+            padding: 8px 0;
+            }
+
+            .faq-answer {
+            display: none;
+            padding: 8px 0 16px;
+            line-height: 1.6;
+            color: #555;
+            }
+
+            .faq-item.active .faq-answer {
+            display: block;
+            }
+    </style>
+</head>
+<body>
+    <h2 class="faq-title">常見問題</h2>
+
+    <section class="faq-section">
+        <h3 class="faq-category">商品相關</h3>
+
+        <div class="faq-item">
+            <button class="faq-question">Q1：香香系香味會不會太重？我鼻子很敏感～</button>
+            <div class="faq-answer">
+            我們的香味偏溫和、舒心，不會刺鼻。但每個人對味道的感受不同，建議第一次使用時可放在空間稍大的地方唷 🕯
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Q2：可以送人嗎？會有附卡片嗎？</button>
+            <div class="faq-answer">
+            當然可以～下單時備註「送禮」，我們會幫你附上手寫風小卡或空白卡片，包裝也會好好整理，不會尷尬喔
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Q3：包裝會很醜嗎？我不想像在收垃圾</button>
+            <div class="faq-answer">
+            雖然我們叫「廢廢」，但我們的包裝走溫柔療癒風 ✨ 收到的不是垃圾，是治癒感滿滿的小驚喜！
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">這些廢物真的有人買嗎？</button>
+            <div class="faq-answer">
+            你不是正在看嗎😏 越廢越可愛，買來不一定有用，但一定讓你會心一笑。
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <h3 class="faq-category">訂單 / 購物流程</h3>
+
+        <div class="faq-item">
+            <button class="faq-question">一定要註冊會員才能購買嗎？</button>
+            <div class="faq-answer">
+            是的唷～我們採會員制購物制度，註冊快速方便，也能查訂單、累積點數。不會寄垃圾信請放心 💌
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">什麼時候會出貨？</button>
+            <div class="faq-answer">
+            付款完成後的 2～3 個工作天內會寄出唷。遇假日或節日可能稍慢，會在 IG 通知大家 🐢
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">可以寄超商嗎？運費怎麼算？</button>
+            <div class="faq-answer">
+            可以的！支援 7-11 和全家取貨，運費 NT$60，滿 NT$1000 免運喔～
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">收到商品有瑕疵怎麼辦？</button>
+            <div class="faq-answer">
+            拍照私訊我們 IG 或寄信給客服，我們會盡快幫你處理，讓你安心買廢物 🧸
+            </div>
+        </div>
+        </section>
+
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+            item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

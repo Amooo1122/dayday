@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>暮暮光香氛蠟燭</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .product-page {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 1200px;
+            margin: 50px auto;
+        }
+
+        .product-images img {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            border-radius: 8px;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .price {
+            font-size: 30px;
+            font-weight: bold;
+            color: #F08B72;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            font-size: 16px;
+            color: #888;
+            margin-left: 8px;
+        }
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: #ccc;
+        }
+
+        .scent-btn {
+            padding: 8px 16px;
+            border: 1px solid #ccc;
+            background-color: white;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .scent-btn.active {
+            background-color: #D3A17E;
+            color: white;
+            border-color: #D3A17E;
+        }
+
+        .quantity-wrapper {
+            display: flex;
+            align-items: center;
+            border: 1px solid #999;
+            width: fit-content;
+            padding: 4px 8px;
+            gap: 12px;
+            font-size: 18px;
+        }
+
+        .qty-btn {
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        #qty-num {
+            min-width: 20px;
+            text-align: center;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            width: 200px;
+            padding: 12px 24px;
+            border: 2px solid #85A96E;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .outline {
+            background-color: white;
+            color: #85A96E;
+        }
+
+        .filled {
+            background-color: #85A96E;
+            color: white;
+        }
+        .btn:hover {
+            background-color: #E39D4A;
+            border: 2px solid #E39D4A;
+            color: #fff;
+        }
+
+        .description p {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        h2{
+            color: #85A96E;
+            margin-bottom: 50px;
+            line-height: 1.5;
+        }
+
+
+        .section-watching-you{
+            width: 1200px;
+            margin:50px auto; 
+        }
+
+        .product-list{
+            display: grid;
+            grid-template-columns: repeat(3,250px);
+            justify-content: end;
+            gap: 50px;
+
+        }
+
+        .product-card {
+            position: relative;
+            text-align: center;
+            font-size: 16px;
+            transition: 0.3s ease;
+            border-radius: 20px;
+            }
+
+        .product-card:hover .img-wrap {
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            transform: translateY(-4px);
+            transform: scale(1.05);
+            filter: brightness(1.15);
+        }
+
+        .img-wrap{
+            width: 100%;
+            aspect-ratio:1/1;
+            overflow: hidden;
+            border-radius: 20px;
+            margin-bottom: 8px; 
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.95);
+            transition: 0.3s ease;
+            
+        }
+
+        .product-card:hover::after {
+            content: '👀';
+            position: absolute;
+            top: -24px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            opacity: 0.8;
+            animation: blink 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="/pic/logo.png" alt="Logo"></a>
+        </div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">全部商品</a></li>
+                <li><a href="new-arrivals.html">新品上市</a></li>
+                <li><a href="news.html">特級專區</a></li>
+                <li><a href="about.html">品牌故事</a></li>   
+            </ul>
+        </nav>
+
+        <div class="head-icon">
+            <a href="#" class="icon-member">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M24 20a7 7 0 1 0 0-14a7 7 0 0 0 0 14M6 40.8V42h36v-1.2c0-4.48 0-6.72-.872-8.432a8 8 0 0 0-3.496-3.496C35.92 28 33.68 28 29.2 28H18.8c-4.48 0-6.72 0-8.432.872a8 8 0 0 0-3.496 3.496C6 34.08 6 36.32 6 40.8"/></svg>    
+            </a>
+            <a href="#" class="icon-cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+            <path fill="currentColor" fill-rule="evenodd" d="M3 2a1 1 0 0 0 0 2h1.074l.16 2.077l.616 8.017a3 3 0 0 0 3.205 2.762l10.355-.74a3 3 0 0 0 2.768-2.661l.816-7.345A1 1 0 0 0 21 5H6.157l-.16-2.077A1 1 0 0 0 5 2zm4 18.5A1.5 1.5 0 0 1 8.5 19h.01a1.5 1.5 0 0 1 1.5 1.5v.01a1.5 1.5 0 0 1-1.5 1.5H8.5a1.5 1.5 0 0 1-1.5-1.5zM17.5 19a1.5 1.5 0 0 0-1.5 1.5v.01a1.5 1.5 0 0 0 1.5 1.5h.01a1.5 1.5 0 0 0 1.5-1.5v-.01a1.5 1.5 0 0 0-1.5-1.5z" clip-rule="evenodd" />
+            </svg>
+            </a>
+        </div>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="index.html"><img src="/pic/home.png" alt="首頁" class="breadcrumb-icon">首頁</a>
+        <span class="separator">›</span>
+        <span>全部商品</span>
+        <span class="separator">›</span>
+        <span>最新商品</span>
+        <span class="separator">›</span>
+        <span>暮暮光香氛蠟燭</span>
+    </nav>
+
+    <div class="product-page">
+        <div class="product-images">
+            <img src="/items/03_candle_wood-warmth.jpg" alt="商品圖片1">
+            <img src="/items/03_candle_wood-warmth-1.png" alt="商品圖片2">
+            <img src="/items/03_candle_wood-warmth-2.png" alt="商品圖片3">
+        </div>
+
+        <div class="product-info">
+            <h3>暮暮光香氛蠟燭</h3>
+            <p class="price">
+            <span class="current-price">NT$990</span>
+            <span class="original-price">NT$1090</span>
+            </p>
+            <div class="line"></div>
+
+            <div class="scent-options">
+                <button class="scent-btn">草本調</button>
+                <button class="scent-btn">花香調</button>
+                <button class="scent-btn">甜香調</button>
+            </div>
+
+            <div class="quantity-wrapper">
+                <button class="qty-btn" id="minus">−</button>
+                <span id="qty-num">1</span>
+                <button class="qty-btn" id="plus">＋</button>
+            </div>
+
+
+            <div class="button-group">
+                <button class="btn outline">加入購物車</button>
+                <button class="btn filled">立即結帳</button>
+            </div>
+
+            <div class="line"></div>
+
+            <h4>商品描述</h4>
+            <div class="description">
+                <p>
+                    當火柴劃破靜謐的空氣， 幕幕光悄悄亮起——<br>
+                    琥珀玻璃盛裝著淡雅香氣，隨著燭火晃動，<br>
+                    像極了黃昏落在你窗邊的那道光。<br>
+                    放鬆、沉澱、或只是單純地，陪自己好好靜一會。<br>
+                    讓幕幕光，成為你生活中最溫柔的片刻。
+                </p>
+            </div>
+            <div class="tag">
+                <p>
+                    #幕幕光
+                    #香氛療癒
+                    #日日廢廢選物
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <section class="section-watching-you">
+        <h2 class="section-title">不是強迫推銷，<br>只是他們一直看著你。</h2>
+        <div class="product-list">
+            <div class="product-card">
+                <div class="img-wrap">
+                <img src="/items-web/01_lamp_moonlight-bubble.webp" alt="月夜圓光">
+                </div>
+                <div class="product-name">月夜圓光</div>
+                <div class="product-price">NT$1080</div>
+            </div>
+            <div class="product-card">
+                <div class="img-wrap">
+                <img src="/items-web/02_figure_lucky-meow.webp" alt="小福餘醬">
+                </div>
+                <div class="product-name">小福餘醬</div>
+                <div class="product-price">NT$390</div>
+            </div>
+            <div class="product-card">
+                <div class="img-wrap">
+                <img src="/items-web/05_ring_forest-heart.webp" alt="小福貓燈">
+                </div>
+                <div class="product-name">漫漫小龜</div>
+                <div class="product-price">NT$680</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <img src="/pic/logo.png" alt="logo">
+            <ul class="footer-nav">
+                <li><a href="about.html">品牌故事</a></li>
+                <li><a href="#">Q&A</a></li>
+                <li><a href="#">隱私條款</a></li>
+                <li><a href="#">聯絡廢廢</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <p class="footer-bottom">© 日日廢廢 2025. All rights reserved.</p>
+            <div class="footer-icon">
+            <a href="#"><img src="/pic/FB.png" alt="FB"></a>
+            <a href="#"><img src="/pic/IG.png" alt="IG"></a>
+            <a href="#"><img src="/pic/line.png" alt="LINE"></a>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    const buttons = document.querySelectorAll('.scent-btn');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+        // 先移除所有按鈕的 active
+        buttons.forEach(btn => btn.classList.remove('active'));
+        // 給被點到的那顆加 active
+        button.classList.add('active');
+        });
+    });
+
+    const minusBtn = document.getElementById('minus');
+    const plusBtn = document.getElementById('plus');
+    const qtyNum = document.getElementById('qty-num');
+
+    let count = 1;
+
+    minusBtn.addEventListener('click', () => {
+        if (count > 1) {
+        count--;
+        qtyNum.textContent = count;
+        }
+    });
+
+    plusBtn.addEventListener('click', () => {
+        count++;
+        qtyNum.textContent = count;
+    });
+</script>
+</body>
+</html>

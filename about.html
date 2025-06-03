@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於廢廢</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .about-contaioner{
+            margin: auto;
+        }
+        .about-banner {
+            position: relative;
+            padding: 60px 20px;
+            display: flex;
+            justify-content: center;
+            background-image: url(/pic/blob.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: left 50% center;
+        }
+
+        .about-banner__content {
+            display: grid;
+            grid-template-columns: 1fr 500px;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 0px;
+            
+        }
+
+        .about-banner__text {
+        flex: 1;
+        line-height: 1.5;
+        white-space: nowrap;
+        }
+
+        .about-banner__image {
+        flex: 1;
+        text-align: right;
+        }
+
+        .about-banner__image img {
+        max-width: 100%;
+        height: auto;
+        }
+
+        .about-concept {
+        padding: 80px 20px;
+        width: 1200px;
+        margin: auto;
+        }
+
+        .about-concept__container {
+        position: relative;
+        margin: 0 auto;
+        }
+
+        .about-concept__text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 20px 40px;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        }
+        
+        .about-concept__text h3 {
+        margin-bottom: 16px;
+        }
+
+        .about-concept__text p {
+        line-height: 1.8;
+        }
+
+        .about-concept__desc {
+        margin: 0 auto ;
+        padding: 20px 40px;
+        line-height: 1.8;
+        }
+
+        .about-message {
+            margin: auto;
+            padding: 80px 20px;
+            width: 1200px;
+        }
+
+        .about-message__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        gap: 40px;
+ 
+        }
+
+        .about-message__image img {
+        max-width: 100%;
+        }
+
+        .about-message__text h3 {
+        margin-bottom: 24px;
+        line-height: 1.6;
+        }
+
+        .about-message__text p,
+        .about-philosophy__text p {
+        padding-left: 72px;
+        }
+
+        .about-philosophy {
+        width: 1200px;
+        margin: auto;
+        padding: 100px 20px;
+        }
+
+        .about-philosophy__container {
+        display: grid;
+        grid-template-columns: 1fr 600px;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+        }
+
+        .about-philosophy__text h3 {
+        margin-bottom: 24px;
+        }
+
+        .about-philosophy_images {
+        position: relative;
+        height: 775px;
+        }
+
+        .img-top {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            z-index: 1;
+        }
+
+        .img-bottom {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            z-index: 2;
+        }
+
+        .img-top,
+        .img-bottom {
+        width: 377px;
+        height: 488px;
+        object-fit: cover;
+        border-radius: 16px;
+        }
+
+        .about-breathing {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        position: relative;
+        }
+
+        .about-breathing__bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;   /* 自動裁切填滿區塊 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .about-breathing__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+        text-align: center;
+        z-index: 1;
+        }
+
+        .about-ending {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .about-ending__content p {
+            margin: 0 0 16px;
+        }
+
+        .ending-btn {
+            display: inline-block;
+            margin-top: 24px;
+            padding: 8px 24px;
+            background-color: #E29E59;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            }
+
+            .ending-btn:hover {
+            background-color: #c57736;
+            }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="/pic/logo.png" alt="Logo"></a>
+        </div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">全部商品</a></li>
+                <li><a href="new-arrivals.html">新品上市</a></li>
+                <li><a href="news.html">特級專區</a></li>
+                <li><a href="about.html">品牌故事</a></li>   
+            </ul>
+        </nav>
+
+        <div class="head-icon">
+            <a href="#" class="icon-member">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M24 20a7 7 0 1 0 0-14a7 7 0 0 0 0 14M6 40.8V42h36v-1.2c0-4.48 0-6.72-.872-8.432a8 8 0 0 0-3.496-3.496C35.92 28 33.68 28 29.2 28H18.8c-4.48 0-6.72 0-8.432.872a8 8 0 0 0-3.496 3.496C6 34.08 6 36.32 6 40.8"/></svg>    
+            </a>
+            <a href="#" class="icon-cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+            <path fill="currentColor" fill-rule="evenodd" d="M3 2a1 1 0 0 0 0 2h1.074l.16 2.077l.616 8.017a3 3 0 0 0 3.205 2.762l10.355-.74a3 3 0 0 0 2.768-2.661l.816-7.345A1 1 0 0 0 21 5H6.157l-.16-2.077A1 1 0 0 0 5 2zm4 18.5A1.5 1.5 0 0 1 8.5 19h.01a1.5 1.5 0 0 1 1.5 1.5v.01a1.5 1.5 0 0 1-1.5 1.5H8.5a1.5 1.5 0 0 1-1.5-1.5zM17.5 19a1.5 1.5 0 0 0-1.5 1.5v.01a1.5 1.5 0 0 0 1.5 1.5h.01a1.5 1.5 0 0 0 1.5-1.5v-.01a1.5 1.5 0 0 0-1.5-1.5z" clip-rule="evenodd" />
+            </svg>
+            </a>
+        </div>
+    </header>
+    <div class="about-contaioner">
+        <section class="about-banner">
+
+            <div class="about-banner__content">
+                <div class="about-banner__text">
+                    <h1>
+                        <span class="highlight-o">日日</span>都是值得期待的形狀<br>
+                        <span class="highlight-g">廢廢</span>的也能被好好喜歡
+                    </h1>
+                </div>
+                <div class="about-banner__image">
+                <img src="/pic/calendar.png" alt="日曆與手寫筆">
+                </div>
+            </div>
+
+            <div class="about-banner__dots about-banner__dots--left"></div>
+            <div class="about-banner__dots about-banner__dots--right"></div>
+        </section>
+    </div>
+
+    <section class="about-concept">
+        <div class="about-concept__container">
+            <img src="/pic/bn-watch.png" alt="手錶" class="about-concept__bg">
+
+            <div class="about-concept__text">
+                <h3>為什麼是 <span class="highlight-g">「廢」</span></h3>
+                <p>
+                    在什麼都講求「效率」和「目標」的快時代裡，<br>
+                    我們總是被提醒要努力、要進步，<br>
+                    要不斷往前走。
+                </p>
+            </div>
+        </div>
+
+        <div class="about-concept__desc">
+            <p>
+            但有時候，不是不想努力，只是想暫時放下那些多「應該」。<br>
+            可我希望「廢」不是貶義的意思。<br>
+            廢，是讓自己喘口氣、緩一點的時間。<br>
+            是給自己一段不被要求、不用證明什麼的空白。
+            </p>
+        </div>
+    </section>
+
+    <section class="about-message">
+        <div class="about-message__container">
+            <div class="about-message__image">
+                <img src="/pic/bn-light.png" alt="暖色燈泡">
+            </div>
+
+            <div class="about-message__text">
+                <h3><span class="highlight-o">日日</span><span class="highlight-g">廢廢</span>想傳遞的...</h3>
+                <p>
+                    我們不想告訴你要變得更好，<br>
+                    也不會告訴你應該做些什麼。<br><br>
+
+                    只想在你疲倦的時候，<br>
+                    留一個可以安心發懶的小角落，<br>
+                    接住那個累到不想說話的你。<br><br>
+
+                    等你準備好了、休息夠了，<br>
+                    你依然可以朝著下一個目標前進，<br>
+                    而我們陪著你，一起慢慢走下去。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-philosophy">
+        <div class="about-philosophy__container">
+            <div class="about-philosophy__text">
+            <h3><span class="highlight-o">選</span>物哲學</h3>
+            <p>
+                我們挑的東西，<br>
+                不一定實用，也不一定必要。<br><br>
+
+                但它們選剛剛好 ——<br>
+                剛好讓你微笑，剛好想多看一眼，<br>
+                剛好陪你過一個懶散的午後。<br><br>
+
+                一些能陪伴你的小東西，<br>
+                在你需要放空、最不想解釋的時候，<br>
+                靜靜存在身邊。<br><br>
+
+                因為我們相信，<br>
+                就算只是一些小廢物，<br>
+                只要被喜歡，就已經夠重要了。
+            </p>
+            </div>
+
+            <div class="about-philosophy_images">  
+                <img src="/items-web/02_figure_lucky-meow.webp" alt="貓咪杯子" class="img-top">
+                <img src="/items-web/01_lamp_moonlight-bubble.webp" alt="床邊燈" class="img-bottom">
+            </div>
+        </div>
+    </section>
+
+    <section class="about-breathing">
+        <img src="/pic/bn_airplane.png" alt="窗邊紙飛機" class="about-breathing__bg">
+        <div class="about-breathing__text">
+            <p>你不需要很厲害<br>也可以不活的那麼用力</p>
+            <p>更真實的是在低能量時好好活著</p>
+            <p class="highlight-o">停下來</p>
+            <p class="highlight-g">深呼吸</p>
+            <p>
+            這是一個陪你緩慢<br>
+            尋找微弱幸福也會有光線的地方<br>
+            當你準備好了，我們就在彼此的光裡<br>
+            找到一起可以持續向前走的方法
+            </p>
+        </div>
+    </section>
+
+    <section class="about-ending">
+        <div class="about-ending__content">
+            <p>我們不急著抵達哪裡，</p>
+            <p>但希望能陪你一起走走。</p>
+            <p>
+            找到旅途中屬於你的
+            <span class="highlight">小夥伴</span> 吧
+            </p>
+            <a href="new-arrivals.html" class="ending-btn">GO!!</a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-main">
+            <img src="/pic/logo.png" alt="logo">
+            <ul class="footer-nav">
+                <li><a href="about.html">品牌故事</a></li>
+                <li><a href="#">Q&A</a></li>
+                <li><a href="#">隱私條款</a></li>
+                <li><a href="#">聯絡廢廢</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <p class="footer-bottom">© 日日廢廢 2025. All rights reserved.</p>
+            <div class="footer-icon">
+            <a href="#"><img src="/pic/FB.png" alt="FB"></a>
+            <a href="#"><img src="/pic/IG.png" alt="IG"></a>
+            <a href="#"><img src="/pic/line.png" alt="LINE"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
