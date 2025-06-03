@@ -63,7 +63,8 @@ header{
     background-color: #E39D4A;
     width: 1200px;
     border-radius: 100px;
-    gap: 6px
+    gap: 6px;
+    font-size: 16px;
 }
 
 .breadcrumb-icon {

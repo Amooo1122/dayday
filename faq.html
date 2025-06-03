@@ -4,124 +4,192 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>常見問題</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        .container{
+            width: 1200px;
+            margin: 50px auto;
+            align-items: center;
+        }
+
         .faq-section {
             max-width: 720px;
-            margin: 50px auto;
+            margin: 30px auto;
             padding: 40px 24px;
         }
 
-            .faq-title {
+        .faq-title {
+            text-align: center;
             margin-bottom: 24px;
-            color: #6DA675;
+            color: #E39D4A;
         }
 
-            .faq-item {
+        .faq-category{
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .faq-item {
             border-bottom: 1px solid #ddd;
-            padding: 12px 0;
+            padding: 10px 0;
             }
 
-            .faq-question {
-            background: none;
-            border: none;
-            font-size: 18px;
-            font-weight: bold;
-            color: #6DA675;
-            text-align: left;
-            width: 100%;
+        .faq-item summary {
             cursor: pointer;
-            padding: 8px 0;
-            }
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+        }
 
-            .faq-answer {
-            display: none;
-            padding: 8px 0 16px;
-            line-height: 1.6;
-            color: #555;
-            }
+        .faq-item .icon {
+            display: inline-block; 
+            transition: transform 0.3s ease;
+        }
 
-            .faq-item.active .faq-answer {
-            display: block;
-            }
+        .faq-item[open] .icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-item:nth-child(odd) .faq-q {
+            color: #8EB376; 
+        }
+
+        .faq-item:nth-child(even) .faq-q{
+            color: #FFB661;
+        }
+
+        .faq-item p{
+            font-size: 1rem;
+            left: 5px;
+        }
     </style>
 </head>
 <body>
-    <h2 class="faq-title">常見問題</h2>
-
-    <section class="faq-section">
-        <h3 class="faq-category">商品相關</h3>
-
-        <div class="faq-item">
-            <button class="faq-question">Q1：香香系香味會不會太重？我鼻子很敏感～</button>
-            <div class="faq-answer">
-            我們的香味偏溫和、舒心，不會刺鼻。但每個人對味道的感受不同，建議第一次使用時可放在空間稍大的地方唷 🕯
-            </div>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="./pic/logo.png" alt="Logo"></a>
         </div>
+        
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">全部商品</a></li>
+                <li><a href="new-arrivals.html">新品上市</a></li>
+                <li><a href="news.html">特級專區</a></li>
+                <li><a href="about.html">品牌故事</a></li>   
+            </ul>
+        </nav>
 
-        <div class="faq-item">
-            <button class="faq-question">Q2：可以送人嗎？會有附卡片嗎？</button>
-            <div class="faq-answer">
-            當然可以～下單時備註「送禮」，我們會幫你附上手寫風小卡或空白卡片，包裝也會好好整理，不會尷尬喔
-            </div>
+        <div class="head-icon">
+            <a href="#" class="icon-member">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M24 20a7 7 0 1 0 0-14a7 7 0 0 0 0 14M6 40.8V42h36v-1.2c0-4.48 0-6.72-.872-8.432a8 8 0 0 0-3.496-3.496C35.92 28 33.68 28 29.2 28H18.8c-4.48 0-6.72 0-8.432.872a8 8 0 0 0-3.496 3.496C6 34.08 6 36.32 6 40.8"/></svg>    
+            </a>
+            <a href="#" class="icon-cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
+            <path fill="currentColor" fill-rule="evenodd" d="M3 2a1 1 0 0 0 0 2h1.074l.16 2.077l.616 8.017a3 3 0 0 0 3.205 2.762l10.355-.74a3 3 0 0 0 2.768-2.661l.816-7.345A1 1 0 0 0 21 5H6.157l-.16-2.077A1 1 0 0 0 5 2zm4 18.5A1.5 1.5 0 0 1 8.5 19h.01a1.5 1.5 0 0 1 1.5 1.5v.01a1.5 1.5 0 0 1-1.5 1.5H8.5a1.5 1.5 0 0 1-1.5-1.5zM17.5 19a1.5 1.5 0 0 0-1.5 1.5v.01a1.5 1.5 0 0 0 1.5 1.5h.01a1.5 1.5 0 0 0 1.5-1.5v-.01a1.5 1.5 0 0 0-1.5-1.5z" clip-rule="evenodd" />
+            </svg>
+            </a>
         </div>
+    </header>
 
-        <div class="faq-item">
-            <button class="faq-question">Q3：包裝會很醜嗎？我不想像在收垃圾</button>
-            <div class="faq-answer">
-            雖然我們叫「廢廢」，但我們的包裝走溫柔療癒風 ✨ 收到的不是垃圾，是治癒感滿滿的小驚喜！
+    <nav class="breadcrumb">
+        <a href="index.html"><img src="./pic/home.png" alt="首頁" class="breadcrumb-icon">首頁</a>
+        <span class="separator">›</span>
+        <span>常見問題</span>
+    </nav>
+
+    <div class="container">
+        <h2 class="faq-title">常見問題</h2>
+        <section class="faq-section">
+            <h4 class="faq-category">商品相關</h4>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="faq-q">
+                        Q1：香香系商品香味會太重嗎？
+                        <span class="icon">▼</span>
+                    </summary>
+                    <p>我們的香味偏溫和、舒心，不會刺鼻。但每個人對味道的感受不同，建議第一次使用時可放在空間稍大的地方唷 🕯</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-q">
+                        Q2：可以送人嗎？會有附卡片嗎？
+                        <span class="icon">▼</span>
+                    </summary class="faq-q">
+                    <p>當然可以～下單時備註「送禮」，我們會幫你附上手寫風小卡或空白卡片，包裝也會好好整理，不會尷尬喔</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-q">
+                        Q3：包裝會很醜嗎？我不想像在收垃圾
+                        <span class="icon">▼</span>
+                    </summary>
+                    <p>雖然我們叫「廢廢」，但我們的包裝走溫柔療癒風 ✨ 收到的不是垃圾，是治癒感滿滿的小驚喜！</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-q">
+                        Q4：這些廢物真的有人買嗎？
+                        <span class="icon">▼</span>
+                    </summary>
+                    <p>你不是正在看嗎😏 越廢越可愛，買來不一定有用，但一定讓你會心一笑。</p>
+                </details>
             </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">這些廢物真的有人買嗎？</button>
-            <div class="faq-answer">
-            你不是正在看嗎😏 越廢越可愛，買來不一定有用，但一定讓你會心一笑。
-            </div>
-        </div>
-    </section>
-
-    <section class="faq-section">
-        <h3 class="faq-category">訂單 / 購物流程</h3>
-
-        <div class="faq-item">
-            <button class="faq-question">一定要註冊會員才能購買嗎？</button>
-            <div class="faq-answer">
-            是的唷～我們採會員制購物制度，註冊快速方便，也能查訂單、累積點數。不會寄垃圾信請放心 💌
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">什麼時候會出貨？</button>
-            <div class="faq-answer">
-            付款完成後的 2～3 個工作天內會寄出唷。遇假日或節日可能稍慢，會在 IG 通知大家 🐢
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">可以寄超商嗎？運費怎麼算？</button>
-            <div class="faq-answer">
-            可以的！支援 7-11 和全家取貨，運費 NT$60，滿 NT$1000 免運喔～
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <button class="faq-question">收到商品有瑕疵怎麼辦？</button>
-            <div class="faq-answer">
-            拍照私訊我們 IG 或寄信給客服，我們會盡快幫你處理，讓你安心買廢物 🧸
-            </div>
-        </div>
         </section>
+        <section class="faq-section">
+            <h4 class="faq-category">訂單相關</h4>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary class="faq-q">
+                        Q1：一定要註冊會員才能購買嗎？ 
+                        <span class="icon">▼</span>
+                    </summary>
+                    <p>是的唷～我們採會員制購物制度，註冊快速方便，也能查訂單、累積點數。不會寄垃圾信請放心 💌</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-q">
+                        Q2：什麼時候會出貨？
+                        <span class="icon">▼</span>
+                    </summary class="faq-q">
+                    <p>付款完成後的 2～3 個工作天內會寄出唷。遇假日或節日可能稍慢，會在 IG 通知大家 🐢</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-q">
+                        Q3：可以寄超商嗎？運費怎麼算？
+                        <span class="icon">▼</span>
+                    </summary>
+                    <p>可以的！支援 7-11 和全家取貨，運費 NT$60，滿 NT$1000 免運喔～
+</p>
+                </details>
+                <details class="faq-item">
+                    <summary class="faq-q">
+                        Q4：收到商品有瑕疵怎麼辦？？
+                        <span class="icon">▼</span>
+                    </summary>
+                    <p>拍照私訊我們 IG 或寄信給客服，我們會盡快幫你處理，讓你安心買廢物 </p>
+                </details>
+            </div>
+        </section>
+    </div>
 
+    <footer class="site-footer">
+        <div class="footer-main">
+            <img src="./pic/logo.png" alt="logo">
+            <ul class="footer-nav">
+                <li><a href="about.html">品牌故事</a></li>
+                <li><a href="faq.html">Q&A</a></li>
+                <li><a href="#">隱私條款</a></li>
+                <li><a href="#">聯絡廢廢</a></li>
+            </ul>
+        </div>
+        <div class="footer-social">
+            <p class="footer-bottom">© 日日廢廢 2025. All rights reserved.</p>
+            <div class="footer-icon">
+            <a href="#"><img src="./pic/FB.png" alt="FB"></a>
+            <a href="#"><img src="./pic/IG.png" alt="IG"></a>
+            <a href="#"><img src="./pic/line.png" alt="LINE"></a>
+            </div>
+        </div>
+    </footer>
 
-    <script>
-        const faqItems = document.querySelectorAll('.faq-item');
-
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-            item.classList.toggle('active');
-            });
-        });
-    </script>
 </body>
 </html>
