@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>本月新品</title>
+    <link rel="stylesheet" href="rest.css">
+    <link rel="stylesheet" href="all.css">
+    <style>
+        .category-container{
+            max-width: var(--total-width);
+            width: 100%;
+            margin: 50px auto ;
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            justify-content: space-between;
+        }
+
+        .category-sidebar{
+            width: 220px;
+            padding: 25px;
+            border: 5px solid #F4E5D0;
+            border-radius: 15px;
+        }
+
+        .category-label ,
+        .category-sidebar details {
+            padding: 5px 0 5px 15px;
+        }
+
+        .active {
+                font-weight: 700;
+                background-color: #F4E5D0;
+                border-radius: 15px;
+        }
+
+        .category-sidebar summary {
+            position: relative;
+            list-style: none;
+        }
+
+        .category-sidebar summary::before {
+            content: "+";
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .category-sidebar details[open] summary::before {
+            content: "–";
+        }
+
+        .category-sidebar li {
+            font-size: 16px;
+            padding-left:1.5rem ;
+            margin-bottom:10px;  
+        }
+
+
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .product-header-left{
+            
+            margin: 0;
+        }
+
+        .product-header-right{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .product-sort {
+            display: flex;
+            align-items: center;
+
+            }
+
+        .product-sort select {
+            padding: 4px 8px;
+            border-radius: 15px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            gap: 32px;
+        }
+
+        .product-card {
+            text-align: center;
+            transition: 0.3s ease;
+            border-radius: 15px;
+            }
+
+        .product-card:hover .img-wrap {
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+            transform: translateY(-4px);
+        }
+
+        .img-wrap{
+            width: 100%;
+            aspect-ratio:1/1;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-bottom: 5px; 
+        }
+
+        .product-name,
+        .product-price{
+            margin-bottom: 5px;
+        }
+
+
+
+        .product-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            
+        }
+
+        @media screen and (max-width: 430px) {
+
+            .product-header-right{
+                display: block;
+                text-align: right;
+            }
+
+            .product-header-right span{
+                display: none;
+            }
+
+            .product-grid {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            }
+
+        }
+
+        @media screen and (max-width: 768px) {
+            .category-container{
+                display: block;
+                padding: 0 10px;
+            }
+
+            .category-sidebar{
+                display: none;
+            }
+
+            .product-grid {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+
+    <nav class="breadcrumb">
+        <span class="breadcrumb-content">
+            <a href="index.html"><img src="./pic/home.png" alt="首頁" class="breadcrumb-icon">首頁</a>
+            <span class="separator">›</span>
+            <a href="shopall.html">全部商品</a>
+        </span>
+    </nav>
+
+    <div class="category-container">  
+        <aside class="category-sidebar">
+            <div class="category-label  main-category" data-filter="">全部商品</div>
+            <div class="category-label  main-category" data-filter="本月新品">本月新品</div>
+            <div class="category-label  main-category" data-filter="熱銷推薦">熱銷推薦</div>
+            <details>
+                <summary class="category-label main-category" data-filter="日常系">日常系</summary>
+                <ul>
+                <li data-filter="毛茸茸">毛茸茸</li>
+                <li data-filter="造型燈">造型燈</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary class="category-label main-category" data-filter="香香系">香香系</summary>
+                <ul>
+                <li data-filter="香氛蠟燭">香氛蠟燭</li>
+                <li data-filter="香氛機">香氛機</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary class="category-label main-category" data-filter="儀式感系">儀式感系</summary>
+                <ul>
+                <li data-filter="小廢物">小廢物</li>
+                <li data-filter="桌面擺飾">桌面擺飾</li>
+                </ul>
+            </details>
+
+            
+            <details>
+                <summary class="category-label main-category">送禮企劃</summary>
+                <ul>
+                <li data-filter="送給他">送給他</a></li>
+                <li data-filter="送給她">送給她</a></li>
+                <li data-filter="生日快樂">生日快樂</a></li>
+                </ul>
+            </details>
+        </aside>
+        <main>
+            <section class="product-area">
+                <div class="product-header">
+                    <h3 class="product-header-left">全部商品</h3>
+                    <div class="product-header-right">
+                        <div class="product-count"></div>
+                        <span class="divider">|</span>
+                        <div class="product-sort">商品排序：
+                            <select>
+                                <option value="">-</option>
+                                <option value="low-to-high">價格低 → 高</option>
+                                <option value="high-to-low">價格高 → 低</option>
+                            </select>
+                        </div>
+                    </div>
+            
+                </div>
+
+                <div class="product-grid">
+                        <div class="product-card" data-category="香香系,熱銷推薦,送給她" data-subcategory="香氛蠟燭" 
+                        data-price="990">
+                        <a href="candle_wood-warmth.html?fr om=香氛蠟燭">
+                            <div class="img-wrap">
+                            <img src="./items/03_candle_wood-warmth.jpg" alt="暮暮光香氛蠟燭">
+                            </div>
+                            <div class="product-name">暮暮光香氛蠟燭</div>
+                            <div class="product-price">NT$990</div>
+                        </a>
+                    </div>
+                    <div class="product-card" data-category="日常系,本月新品,送給她" data-subcategory="造型燈" data-price="1080" >
+                        <a href="#">
+                        <div class="img-wrap">
+                        <img src="./items/01_lamp_moonlight-bubble.jpg" alt="月夜圓光">
+                        </div>
+                        <div class="product-name">月夜圓光</div>
+                        <div class="product-price">NT$1080</div>
+                        </a>
+                    </div>
+                    <div class="product-card" data-category="儀式感系,熱銷推薦,本月新品" data-subcategory="桌面擺飾" data-price="390">
+                        <a href="#">
+                            <div class="img-wrap">
+                                <img src="./items/02_figure_lucky-meow.jpg" alt="小福餘醬">
+                            </div>
+                            <div class="product-name">小福餘醬</div>
+                            <div class="product-price">NT$390</div>
+                        </a>
+                    </div>
+                    <div class="product-card" data-category="日常系" data-subcategory="毛茸茸" data-price="880">
+                        <a href="#">
+                            <div class="img-wrap">
+                                <img src="./items/04_blanket_mumu-cozy.jpg" alt="白日夢織">
+                            </div>
+                            <div class="product-name">白日夢織</div>
+                            <div class="product-price">NT$880</div>
+                        </a>
+                    </div>
+                    <div class="product-card" data-category="儀式感系,送給" data-subcategory="小廢物" data-price="680">
+                        <a href="#">
+                            <div class="img-wrap">
+                                <img src="./items/05_ring_forest-heart.jpg" alt="漫漫小龜">
+                            </div>
+                            <div class="product-name">漫漫小龜</div>
+                            <div class="product-price">NT$680</div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="footer"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/dayday.js"></script>
+    <script src="./js/shopall.js"></script>
+
+</body>
+</html>

@@ -6,526 +6,90 @@
     <title>日日廢廢</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="./css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <style>
-        h2{
-            font-family: 'Zen Maru Gothic';
-            font-size: 55px;
-            font-weight: 500;
-        }
-
-        header{
-            padding: 15px 40px;
-            display: grid;
-            grid-template-columns:120px 1fr 120px;
-            align-items: center;
-        }
-
-        .logo img{
-            width: 100%;
-        }
-        
-        .main-nav ul{
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-weight: 500;
-        }
-
-        .head-icon{
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-        .container{
-            max-width: 1200px;
-            margin: auto;
-            padding: 125px 0;
-        }
-
-        .slogan{
-            width: 1200px;
-            margin:120px auto;
-            text-align: center;
-            font-size: 55px;
-            font-weight: 500;
-            line-height: 2;
-            letter-spacing: 0.25rem;
-        }
-
-        .heroBn .pic{
-            margin:50px 0 ;
-            display: grid;
-            position: relative;
-            place-items: center;
-            height: 100vh;
-            border-radius: 100px;
-            overflow: hidden;
-        }
-
-        .heroBn .pic::before{
-            content: "";
-            position: absolute;
-            background-image: url(./pic/leaf-01.png);
-            right: 10px;
-            bottom: 0px;
-            width: 200px;   
-            height: 200px;
-            background-size: contain;
-            animation: sway 3s ease-in-out infinite alternate;
-        }   
-
-        .heroBn img{
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        @keyframes sway {
-            0%   { transform: rotate(0deg); }
-            25%  { transform: rotate(5deg); }
-            100%  { transform: rotate(-5deg); }
-        }
-
-        .new-items{
-            display: grid;
-            grid-template-columns: repeat(5,minmax(180px,1fr));
-            gap: 25px;
-            margin: 100px 0 30px;
-        }
-
-        .product-pic    {
-            position: relative;
-            border-radius: 100px 100px 0 0;
-            border:5px solid #FFB661;
-            overflow: hidden;
-            aspect-ratio: 2/3; 
-        }
-
-        .product-card img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: 0.3s ease;
-            filter: blur(5px);
-            transform: scale(1);
-        }
-
-        .product-card:hover img{
-            filter: blur(0);
-            transform: scale(1.1);
-        }
-
-        .product-card{
-            position: relative;
-            transition:0.6s ease;
-        }
-
-        .product-balloon{
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(20px);
-            transition: 0.3s ease;
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            background-color: #EFE8DD;
-            border-radius: 15px;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-            padding: 15px 20px;
-            text-align: center;
-            white-space: nowrap;
-            line-height: 1.5;
-            z-index:2;
-        }
-
-        .product-balloon::after{
-            content: "";
-            position: absolute;
-            bottom: -28px;
-            left: 50%;
-            transform: translateX(-50%);
-            border: 15px solid transparent;
-            border-top-color: #EFE8DD; 
-            border-radius: 4px;
-        }
-
-        .product-card:hover .product-balloon{
-            opacity: 1;
-            transform: translateY(0px);
-        }
-
-        .contain-bg{
-            background-image: url(./pic/wave.png);
-            background-size:cover;
-            background-position: center top;
-        }
-
-        .btn-more-wrap{
-            text-align: right;
-            
-        }
-
-        .btn-more {
-            display: inline-flex;
-            align-items: center;
-            font-size: 25px;
-            font-weight: 400;   
-            gap: 5px;
-        }
-        .btn-icon {
-            width: 28px;
-            height: 28px;
-            background-image: url('./pic/btn.png');
-            background-size: contain;
-            background-position: center;
-            border-radius: 50%;
-            background-color: #F2E3DA;
-            transition: background-image 0.3s ease;
-        }
-        .btn-more:hover .btn-icon {
-        background-image: url('./pic/btn-hover.png');    
-        }
-
-        .new-wrap{
-            display: grid;
-            grid-template-columns: 40% 60%;
-            justify-content: center;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .btn-more-wrap   {
-            text-align: right;
-            margin-top: 30px;
-            font-weight: bold;
-        }
-
-        .vertical-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .news-list li{
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            gap: 4px;
-            padding: 15px 0;
-            line-height: 2;
-            border-top: 1px dashed #8EB376;
-            font-size: 20px;
-        }
-
-        .news-arrow {
-            position: absolute;
-            right: 30px;
-            bottom: 15px;
-            transition: 1s;
-        }
-
-        .news-list li:hover {
-            color: #FFB661;
-            font-weight: bold;
-            border-top:2px solid #FFB661;
-        }
-
-        .news-list li:hover .news-arrow {
-            color: #FFB661;
-            transform: translateX(30px);
-        }
-
-        .recommend-section{
-            background-image: url(./pic/yellow-wave.png);
-        }
-        .section-title{
-            text-align: right;
-        }
-        .recommend-wrap{
-            display: grid;
-            grid-template-columns: 50% 50%;
-            justify-items: center;
-            gap: 40px;
-            align-items: center;
-            margin-top: 50px;
-        } 
-
-        .recommend-list{
-            display: flex;
-            flex-direction: column;
-            gap: 50px;
-            list-style: none;
-        }
-
-        .recommend-item{
-            display: flex;
-            align-items: center;
-            justify-items: center;
-            gap: 20px;
-            width: 400px;
-            background-color: #FDF7EF;
-            border: 5px double #8EB376;
-            border-radius: 50px;
-            box-shadow: 0 0 0 5px #fff inset;
-            font-size: 40px;
-            font-weight: bold;
-            color: #8EB376;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: opacity 0.3s;
-        }
-
-        .recommend-item.active {
-        opacity: 1;
-        border: 2px solid #6DA675;
-        border-radius: 20px;
-        }
-        
-        .recommend-badge {
-        padding: 6px 12px;
-        margin-left: 20px;
-        }
-
-        .recommend-pic {
-        width: 100px;
-        height: 100px;
-        border: 5px solid #8EB376;
-        border-radius: 50%;
-        overflow: hidden;
-        flex-shrink: 0; 
-        }
-
-        .recommend-pic img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        }
-
-        .recommend-name {
-        font-size: 18px;
-        white-space: nowrap;
-        z-index: 2;
-        position: relative;
-        }
-
-        .recommend-main{
-            position: relative;
-        }
-        .recommend-main .product-pic{
-            width: 300px;
-            border-radius: 150px 150px 0 0;
-            border: 5px solid #8EB376;
-
-        }
-
-        .recommend-main .product-pic img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .recommend-more-btn{
-            background-color: #423E37;
-            width: 50px;
-            height: 50px;
-            background-image: url('./pic/btn.png');
-            background-size: contain;
-            background-position: center;  
-            border-radius: 50%;
-            background-color: #F2E3DA;
-            transition: background-image 0.3s ease;
-            position: absolute;
-            right: -25px;
-            bottom: -25px;
-        }
-        .recommend-main:hover .recommend-more-btn{
-        background-image: url('./pic/btn-hover.png');    
-        }
-
-        .about-wrap{
-            display:grid;
-            grid-template-columns: 50% 50%;
-            justify-items: center;
-            align-items: center;
-        }
-
-        .notes {
-            position: relative;
-        }
-
-        .notes-text{
-            font-size: 20px;
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            width: 80%; /* 可視需要調整，避免太寬溢出 */
-            line-height: 1.8;
-            letter-spacing: 1.5px; 
-        }
-
-        .notes p{
-            margin: 20px 0;
-        }
-
-        .notes-text .highlight-o,
-        .notes-text .highlight-g {
-        display: block;  /* 讓它變獨立一行 */
-        margin: 20px 0;  /* 上下空白 */
-        font-size: 22px;
-        font-weight: bold;
-        }
-
-        .site-footer{
-            position: relative;
-            width: 1200px;
-            margin: auto;
-        }
-
-        .footer-main{
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            background-color: #F4E5D0;
-            border-top-right-radius: 40px;
-            border-top-left-radius: 40px;
-            justify-content: space-between;
-            padding: 30px 40px 80px;
-        }
-
-        .footer-main img{
-            width: 100%;    
-        }
-
-        .footer-nav{
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: flex-end;
-        }
-
-        .footer-social{
-            display: grid;
-            position: absolute;
-            width: 1120px;
-            bottom: 0px;
-            left:0;
-            grid-template-columns: 1fr 1fr;
-            background-color: #85A96E;
-            border-top-right-radius: 40px;
-            border-top-left-radius: 40px;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 40px ;
-        }
-
-        .footer-icon{
-            display: flex;
-            justify-content: flex-end;
-            gap: 20px;
-        }
-
-    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-            <img src="./pic/logo.png" alt="Logo">
-            </a>
-        </div>
-        
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#">全部商品</a></li>
-                <li><a href="new-arrivals.html">新品上市</a></li>
-                <li><a href="news.html">特級專區</a></li>
-                <li><a href="about.html">品牌故事</a></li>   
-            </ul>
-        </nav>
-
-        <div class="head-icon">
-            <a href="#" class="icon-member">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M24 20a7 7 0 1 0 0-14a7 7 0 0 0 0 14M6 40.8V42h36v-1.2c0-4.48 0-6.72-.872-8.432a8 8 0 0 0-3.496-3.496C35.92 28 33.68 28 29.2 28H18.8c-4.48 0-6.72 0-8.432.872a8 8 0 0 0-3.496 3.496C6 34.08 6 36.32 6 40.8"/></svg>    
-            </a>
-            <a href="#" class="icon-cart">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
-            <path fill="currentColor" fill-rule="evenodd" d="M3 2a1 1 0 0 0 0 2h1.074l.16 2.077l.616 8.017a3 3 0 0 0 3.205 2.762l10.355-.74a3 3 0 0 0 2.768-2.661l.816-7.345A1 1 0 0 0 21 5H6.157l-.16-2.077A1 1 0 0 0 5 2zm4 18.5A1.5 1.5 0 0 1 8.5 19h.01a1.5 1.5 0 0 1 1.5 1.5v.01a1.5 1.5 0 0 1-1.5 1.5H8.5a1.5 1.5 0 0 1-1.5-1.5zM17.5 19a1.5 1.5 0 0 0-1.5 1.5v.01a1.5 1.5 0 0 0 1.5 1.5h.01a1.5 1.5 0 0 0 1.5-1.5v-.01a1.5 1.5 0 0 0-1.5-1.5z" clip-rule="evenodd" />
-            </svg>
-            </a>
-        </div>
-    </header>
+    <div id="header"></div>
     <section class="slogan">
-        <h1><span class="highlight-o">日日</span>都是值得期待的形狀</h1>
-        <h1><span class="highlight-g">廢廢</span>的也可以被好好喜歡</h1>
+        <h1><span class="highlight-o">日日</span><span>都是值得</span><span>期待的</span><span>形狀</span></h1>
+        <h1><span class="highlight-g">廢廢</span><span>的也</span><span>可以</span><span>被好好</span><span>喜歡</span></h1>
     </section>
 
-    <div class="heroBn">
-        <div class="pic">
-            <a href="#"><img src="./pic/BN-cat.jpg" alt="太空貓咪"></a></div>
+    <div class="scroll-container">
+        <div class="grid-gallery">
+            <div class="grid">
+                <div class="item item-1"><img src="./bn/BN_300_300_1.jpg" /></div>
+                <div class="item item-2"><img src="./bn/BN_620_300.jpg" /></div>
+                <div class="item item-1"><img src="./bn/BN_300_300_2.jpg" /></div>
+                <div class="item item-3"><img src="./bn/BN_620_620.jpg" /></div>
+                <div class="item item-2"><img src="./bn/BN_620_300_2.jpg" /></div>
+                <div class="item item-1"><img src="./bn/BN_300_300_3.jpg" /></div>
+                <div class="item item-1"><img src="./bn/BN_300_300_4.jpg" /></div>
+            </div>
+            <div class="grid">
+                <div class="item item-1"><img src="./bn/BN_300_300_1.jpg" /></div>
+                <div class="item item-2"><img src="./bn/BN_620_300.jpg" /></div>
+                <div class="item item-1"><img src="./bn/BN_300_300_2.jpg" /></div>
+                <div class="item item-3"><img src="./bn/BN_620_620.jpg" /></div>
+                <div class="item item-2"><img src="./bn/BN_620_300_2.jpg" /></div>
+                <div class="item item-1"><img src="./bn/BN_300_300_3.jpg" /></div>
+                <div class="item item-1"><img src="./bn/BN_300_300_4.jpg" /></div>
+            </div>
+        </div>     
     </div>
-    <div class="contain-bg">
-        <div class="container">
-            <h2><span class="highlight-o">新品</span><span class="highlight-g">上市</span></h2>
-            <div class="carousel">
-                <div class="new-items">
-                    <div class="product-card" id="item-01">
-                        <div class="product-balloon">
-                            月夜圓光<br>NT$1080
-                        </div>
-                        <div class="product-pic">
-                        <img src="./items/01_lamp_moonlight-bubble.jpg" alt="月夜圓光">
-                        </div>
-                    </div>
-                    <div class="product-card" id="item-02">
-                        <div class="product-balloon">
-                            小福餘醬<br>NT$390
-                        </div>
-                        <div class="product-pic">
-                
-                        <img src="./items/02_figure_lucky-meow.jpg" alt="小福餘醬">
-                        </div>
-                    </div>
-                    <div class="product-card" id="item-03">
-                        <div class="product-balloon">
-                            暮暮光香氛蠟燭<br>NT$990
-                        </div>
-                        <div class="product-pic">
-                        <a href="candle_wood-warmth.html"><img src="./items/03_candle_wood-warmth.jpg" alt="暮暮光香氛蠟燭"></a>
-                        </div>
-                    </div>
-                    <div class="product-card" id="item-04">
-                        <div class="product-balloon">
-                            白日夢織<br>NT$880
-                        </div>
-                        <div class="product-pic">
-                        <img src="./items/04_blanket_mumu-cozy.png" alt="白日夢織">
-                        </div>
-                    </div>
-                    <div class="product-card" id="item-05">
-                        <div class="product-balloon">
-                            漫漫小龜<br>NT$680
-                        </div>
-                        <div class="product-pic">
-                        <img src="./items/05_ring_forest-heart.jpg" alt="漫漫小龜">
-                        </div>
-                    </div>
+
+    <div class="new-product">
+        <h2 class="title nweproduct"><span class="highlight-o">新品</span><span class="highlight-g">上市</span></h2>
+        <div class="new-items">
+            <div class="product-card" data-title="月夜圓光" data-price="NT$1080">
+                <div class="product-pic">
+                    <img src="./items/01_lamp_moonlight-bubble.jpg" alt="">
                 </div>
             </div>
-            <div class="btn-more-wrap">
-            <a href="new-arrivals.html" class="btn-more">
-            <span class="btn-more-text">前往專區</span>
-            <span class="btn-icon"></span>
-            </a>
+            <div class="product-card" data-title="小福餘醬" data-price="NT$390">
+                <div class="product-pic">
+                    <img src="./items/02_figure_lucky-meow.jpg" alt="">
+                </div>
+            </div>
+            <div class="product-card" data-title="暮暮光香氛蠟燭" data-price="NT$990">
+                <div class="product-pic">
+                    <img src="./items/03_candle_wood-warmth.jpg" alt="">
+                </div>
+            </div>
+            <div class="product-card" data-title="白日夢織" data-price="NT$880">
+                <div class="product-pic">
+                    <img src="./items/04_blanket_mumu-cozy.jpg" alt="">
+                </div>
+            </div>
+            <div class="product-card" data-title="漫漫小龜" data-price="NT$680">
+                <div class="product-pic">
+                    <img src="./items/05_ring_forest-heart.jpg" alt="">
+            </div>
+            </div>
+            <div class="product-card" data-title="小熊泰泰" data-price="NT$520">
+                <div class="product-pic">
+                    <img src="./items/09_teddy.jpg" alt="">
+                </div>
             </div>
         </div>
+        <div class="btn-more-wrap">
+            <a href="new-arrivals.html" class="btn-more">
+            <span class="btn-moretext">前往專區</span>
+            <span class="btn-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="#423E37" d="M10.46 6a2.06 2.06 0 0 1 1.3.46l5.1 4.21a1.7 1.7 0 0 1 0 2.66l-5.1 4.21a2.1 2.1 0 0 1-2.21.26a1.76 1.76 0 0 1-1.05-1.59V7.79a1.76 1.76 0 0 1 1.05-1.59a2.2 2.2 0 0 1 .91-.2"/>
+                </svg>
+            </span>
+            </a>
+        </div>
     </div>
+
     <section class="new-section">
-        <div class="container">
             <div class="new-wrap">
                 <!-- 左側 -->
                 <div class="news-title">
@@ -534,70 +98,94 @@
                 <span class="star star-2"></span>
                 <span class="star star-3"></span>
                 <span class="star star-4"></span>
-            </div>
+                </div>
             <!-- 右側 -->
             <ul class="news-list"> 
                 <li>
-                <a href="news-01.html">
-                <p class="news-date">2025.05.15｜新品上市</p>
-                <p class="news-title-text">【香氣系新品登場｜《暮暮光》蠟燭點亮你的夜</p>
-                <div class="news-arrow">>></div></a>
+                    <a href="news-01.html">
+                        <p class="news-date">2025.05.15｜新品上市</p>
+                        <p class="news-title-text">【香氣系新品登場｜《暮暮光》蠟燭點亮你的夜</p>
+                    </a>
                 </li>
                 <li>
-                <p class="news-date">2025.05.08｜送禮推薦</p>
-                <p class="news-title-text">母親節送禮懶人包上架</p>
-                <a href="#" class="news-arrow">>></a>
+                    <a href="#">
+                        <p class="news-date">2025.05.08｜送禮推薦</p>
+                        <p class="news-title-text">母親節送禮懶人包上架</p>
+                    </a>
                 </li>
                 <li>
-                <p class="news-date">2025.04.25｜快閃活動</p>
-                <p class="news-title-text">盲盒買一送一！</p>
-                <a href="#" class="news-arrow">>></a>
+                    <a href="#">
+                        <p class="news-date">2025.04.25｜快閃活動</p>
+                        <p class="news-title-text">盲盒買一送一！</p>
+                    </a>
+ 
                 </li>
                 <li>
-                <p class="news-date">2025.04.02｜特別企劃</p>
-                <p class="news-title-text">【YES / NO 小夜燈】升級語音版！</p>
-                <a href="#" class="news-arrow">>></a>
-                </li>
+                    <a href="#">
+                        <p class="news-date">2025.04.02｜特別企劃</p>
+                        <p class="news-title-text">【YES / NO 小夜燈】升級語音版！</p>
+                    </a>
 
-                <div class="btn-more-wrap">
+                </li>
+            </ul>
+            </div>
+            <div class="btn-more-wrap">
                 <a href="#" class="btn-more">
                 <span class="btn-more-text">更多消息</span>
-                <span class="btn-icon"></span>
+                <span class="btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path fill="#423E37" d="M10.46 6a2.06 2.06 0 0 1 1.3.46l5.1 4.21a1.7 1.7 0 0 1 0 2.66l-5.1 4.21a2.1 2.1 0 0 1-2.21.26a1.76 1.76 0 0 1-1.05-1.59V7.79a1.76 1.76 0 0 1 1.05-1.59a2.2 2.2 0 0 1 .91-.2"/>
+                    </svg>
+                </span> 
                 </a>
             </div>
-            </ul>
 
-        </div>
     </section>
+
     <div class="recommend-section">
         <div class="container">
             <h2 class="section-title"><span class="highlight-o">人氣</span><span class="highlight-g">推薦</span></h2>
             <div class="recommend-wrap">
                 <!-- 左側清單 -->
-               <ul class="recommend-list">
+                <ul class="recommend-list">
                     <li class="recommend-item" data-img="./items/03_candle_wood-warmth.jpg">
-                        <div class="recommend-badge">1</div>
-                        <div class="recommend-pic"><img src="./items/03_candle_wood-warmth.jpg" alt="暮暮光香氛蠟燭"></div>
-                        <div class="recommend-name">暮暮光香氛蠟燭</div>    
+                        <a href="news-01.html" class="recommend-link">
+                        <span class="recommend-badge">1</span>
+                        <span class="recommend-pic"><img src="./items/03_candle_wood-warmth.jpg" alt="暮暮光香氛蠟燭"></span>
+                        <span class="recommend-name">暮暮光香氛蠟燭</span>  
+                        </a>
                     </li>
                     <li class="recommend-item" data-img="./items/02_figure_lucky-meow.jpg">
-                        <div class="recommend-badge">2</div>
-                        <div class="recommend-pic"><img src="./items/02_figure_lucky-meow.jpg" alt="小福餘醬"></div>
-                        <div class="recommend-name">小福餘醬</div>
+                        <a href="#" class="recommend-link">
+                        <span class="recommend-badge">2</span>
+                        <span class="recommend-pic"><img src="./items/02_figure_lucky-meow.jpg" alt="小福餘醬"></span>
+                        <span class="recommend-name">小福餘醬</span>
+                        </a>
                     </li>
                     <li class="recommend-item" data-img="./items/08_call_me_light.jpg">
-                        <div class="recommend-badge">3</div>
-                        <div class="recommend-pic"><img src="./items/08_call_me_light.jpg" alt="Call Me Light"></div>
-                        <div class="recommend-name">Call Me Light</div>
+                        <a href="#" class="recommend-link">
+                        <span class="recommend-badge">3</span>
+                        <span class="recommend-pic"><img src="./items/08_call_me_light.jpg" alt="Call Me Light"></span>
+                        <span class="recommend-name">Call Me Light</span>
+                        </a>
                     </li>
                 </ul>
                 <div class="recommend-main">
-                <div class="product-pic">
-                    <img id="mainImage" src="./items/02_figure_lucky-meow.jpg" alt="小福餘醬">
-                </div>
-                <a href="candle_wood-warmth.html" class="recommend-more-btn"></a>
+                    <div class="product-pic">
+                        <img id="mainImage" src="./items/02_figure_lucky-meow.jpg" alt="小福餘醬">
+                    </div>
                 </div>
             </div>
+            <div class="btn-more-wrap">
+            <a href="#" class="btn-more">
+            <span class="btn-moretext">前往專區</span>
+            <span class="btn-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="#423E37" d="M10.46 6a2.06 2.06 0 0 1 1.3.46l5.1 4.21a1.7 1.7 0 0 1 0 2.66l-5.1 4.21a2.1 2.1 0 0 1-2.21.26a1.76 1.76 0 0 1-1.05-1.59V7.79a1.76 1.76 0 0 1 1.05-1.59a2.2 2.2 0 0 1 .91-.2"/>
+                </svg>
+            </span>
+            </a>
+        </div>
         </div>  
     </div>
     <div class="about-sectin">
@@ -618,41 +206,10 @@
         </div>
         </div>
     </div>
-    <footer class="site-footer">
-        <div class="footer-main">
-            <img src="./pic/logo.png" alt="logo">
-            <ul class="footer-nav">
-                <li><a href="about.html">品牌故事</a></li>
-                <li><a href="faq.html">Q&A</a></li>
-                <li><a href="#">隱私條款</a></li>
-                <li><a href="#">聯絡廢廢</a></li>
-            </ul>
-        </div>
-        <div class="footer-social">
-            <p class="footer-bottom">© 日日廢廢 2025. All rights reserved.</p>
-            <div class="footer-icon">
-            <a href="#"><img src="./pic/FB.png" alt="FB"></a>
-            <a href="#"><img src="./pic/IG.png" alt="IG"></a>
-            <a href="#"><img src="./pic/line.png" alt="LINE"></a>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
 
-   <script>
-        const items = document.querySelectorAll('.recommend-item');
-        const mainImage = document.getElementById('mainImage');
-
-        items.forEach(item => {
-            item.addEventListener('click', () => {
-            // 切換主圖片
-            const newSrc = item.getAttribute('data-img');
-            mainImage.setAttribute('src', newSrc);
-
-            // 視覺上加選取狀態
-            items.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
-            });
-        });
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="./js/dayday.js"></script>
 </body>
 </html>

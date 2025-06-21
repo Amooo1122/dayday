@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>登入／註冊</title>
+  <link rel="stylesheet" href="reset.css">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #fdf7ef;
+      font-family: 'Zen Maru Gothic', sans-serif;
+    }
+
+    .login-modal {
+      background: #fff7ef;
+      border-radius: 15px;
+      margin: 40px auto;
+      max-width: 400px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+
+    .login-tab {
+      display: flex;
+    }
+
+    .login-tab button {
+      flex: 1;
+      padding: 12px 0;
+      background: #e5eddc;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .login-tab .active {
+      background-color: #a3cf8c;
+      color: #fff;
+    }
+
+    .login-form {
+      padding: 30px;
+    }
+
+    .logo {
+      width: 100px;
+      margin: 0 auto 10px;
+    }
+
+    .logo img {
+      width: 100%;
+    }
+
+    .welcome-text {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .login-form label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"],
+    .login-form input[type="tel"],
+    .login-form input[type="email"],
+    .login-form input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      border: 2px solid #f2c89c;
+      border-radius: 5px;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      margin: 10px 0;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #f2c89c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 20px 0 10px;
+      color: #aaa;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: #ccc;
+    }
+
+    .social-login {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-login img {
+      width: 30px;
+    }
+
+    @media screen and (max-width: 480px) {
+      .login-modal {
+        margin: 20px;
+      }
+
+      .login-form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-modal">
+    <div class="login-tab">
+      <button id="tabLogin" class="active">會員登入</button>
+      <button id="tabRegister">註冊會員</button>
+    </div>
+
+    <div class="form-container">
+      <form id="loginForm" class="login-form">
+        <div class="logo"><img src="./pic/logo.png" alt="logo"></div>
+        <p class="welcome-text">歡迎回來，今天也要一起廢廢的嗎？</p>
+
+        <label><input type="text" id="loginEmail" placeholder="Email"></label>
+        <label><input type="password" id="loginPassword" placeholder="密碼"></label>
+
+        <div class="options">
+          <label><input type="checkbox" id="rememberMe"> 記住帳號</label>
+          <a href="#">忘記密碼</a>
+        </div>
+
+        <button type="submit" class="login-btn">登入</button>
+
+        <div class="divider">其他登入方式</div>
+        <div class="social-login">
+          <a href="#"><img src="./pic/FB.png" alt="FB登入"></a>
+          <a href="#"><img src="./pic/google.png" alt="Google登入"></a>
+        </div>
+      </form>
+
+      <form id="registerForm" class="login-form" style="display: none;">
+        <div class="logo"><img src="./pic/logo.png" alt="logo"></div>
+        <p class="welcome-text">加入我們，一起耍廢放空</p>
+
+        <label><input type="text" placeholder="姓名"></label>
+        <label><input type="tel" placeholder="手機號碼"></label>
+        <label><input type="email" placeholder="Email"></label>
+        <label><input type="password" placeholder="密碼"></label>
+        <label><input type="password" placeholder="再次輸入密碼"></label>
+
+        <button type="submit" class="login-btn">註冊</button>
+
+        <div class="divider">其他登入方式</div>
+        <div class="social-login">
+          <a href="#"><img src="./pic/FB.png" alt="FB登入"></a>
+          <a href="#"><img src="./pic/google.png" alt="Google登入"></a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    // tab 切換
+    $('#tabLogin').click(function () {
+      $('#tabLogin').addClass('active');
+      $('#tabRegister').removeClass('active');
+      $('#loginForm').fadeIn();
+      $('#registerForm').hide();
+    });
+
+    $('#tabRegister').click(function () {
+      $('#tabRegister').addClass('active');
+      $('#tabLogin').removeClass('active');
+      $('#registerForm').fadeIn();
+      $('#loginForm').hide();
+    });
+
+    // 記住帳號功能
+    $(document).ready(function () {
+      if (localStorage.getItem('rememberedEmail')) {
+        $('#loginEmail').val(localStorage.getItem('rememberedEmail'));
+        $('#rememberMe').prop('checked', true);
+      }
+
+      $('#loginForm').on('submit', function (e) {
+        e.preventDefault();
+
+        if ($('#rememberMe').is(':checked')) {
+          localStorage.setItem('rememberedEmail', $('#loginEmail').val());
+        } else {
+          localStorage.removeItem('rememberedEmail');
+        }
+
+        alert('登入送出（模擬）');
+      });
+    });
+  </script>
+</body>
+</html>

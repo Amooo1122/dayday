@@ -1,9 +1,44 @@
+/* --共同設定-- */
+:root {
+    --total-width:1200px;
+}
+
+*,
+*::before,
+*::after {
+box-sizing: border-box;
+}
+
 body{
     background-color: #FDF7EF;
-    color: #423E37;   
+    color:#423E37;   
     font-size: 20px;
     font-family: 'Zen Maru Gothic','AR One Sans'; 
+    line-height: 1.5;
     letter-spacing: 2px;
+
+}
+
+h1{
+    font-size: 3.125rem;
+    font-weight: 500;
+}
+
+
+h2{
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: 10%;
+}
+
+h3{
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+h4{
+    font-size: 20px;
+    font-weight: bold;
 }
 
 ul {
@@ -22,29 +57,6 @@ a:hover{
     color: #FFB661;
 }
 
-header{
-    padding: 15px 40px;
-    display: grid;
-    grid-template-columns:120px 1fr 120px;
-    align-items: center;
-}
-
-.logo img{
-    width: 100%;
-}
-
-.main-nav ul{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-weight: 500;
-}
-
-.head-icon{
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-}
 
 .highlight-o{
     color: #FFB661;
@@ -55,13 +67,20 @@ header{
     font-family: 'Zen Maru Gothic','AR One Sans'; 
 }
 
+.header{
+    z-index: 1000;;
+}
+
+.container{
+    max-width: var(--total-width);
+    margin:50px auto;
+}
+
 .breadcrumb{
     margin: 50px auto;
     padding: 8px 20px;
-    display: flex;
-    align-items: center;
-    background-color: #E39D4A;
-    width: 1200px;
+    background-color: #F4E5D0;
+    max-width: var(--total-width);
     border-radius: 100px;
     gap: 6px;
     font-size: 16px;
@@ -73,85 +92,68 @@ header{
     margin-right: 6px;
 }
 
-.breadcrumb a:hover{
-    color: #fff;
-}
-
-
-.site-footer{
-    position: relative;
-    width: 1200px;
-    margin: auto;
-}
-
-.footer-main{
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    background-color: #F4E5D0;
-    border-top-right-radius: 40px;
-    border-top-left-radius: 40px;
-    justify-content: space-between;
-    padding: 30px 40px 80px;
-}
-
-.footer-main img{
-    width: 100%;    
-}
-
-.footer-nav{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: flex-end;
-}
-
-.footer-social{
-    display: grid;
-    position: absolute;
-    width: 1120px;
-    bottom: 0px;
-    left:0;
-    grid-template-columns: 1fr 1fr;
-    background-color: #85A96E;
-    border-top-right-radius: 40px;
-    border-top-left-radius: 40px;
-    justify-content: space-between;
+.breadcrumb a {
+    display: inline-flex;
     align-items: center;
-    padding: 10px 40px ;
 }
 
-.footer-icon{
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
+.product-card {
+    text-align: center;
+    transition: 0.3s ease;
+    border-radius: 15px;
+    }
+
+.product-card:hover .img-wrap {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-4px);
 }
 
-h1{
-    font-family: 'Zen Maru Gothic';
-    font-size: 3.5rem;
-    font-weight: 500;
-    letter-spacing: 10%;
+.img-wrap{
+    width: 100%;
+    aspect-ratio:1/1;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 5px; 
+}
+
+.product-name,
+.product-price{
+    margin-bottom: 5px;
 }
 
 
-h2{
-    font-family: 'Zen Maru Gothic';
-    font-size: 2.4rem;
-    font-weight: 500;
-    letter-spacing: 10%;
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-h3{
-    font-size: 1.8rem;
-    font-weight: bold;
+
+
+@media screen and (max-width: 768px) {
+    :root {
+        --total-width: 748px;
+    }
+
+    body{
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
 }
 
-h4{
-    font-size: 20px;
-    font-weight: bold;
-}
+@media screen and (max-width: 430px) {
+    :root {
+        --total-width: 420px;
+    }
 
-p{
-    font-size: 1.125rem;
-    line-height: 2;
+    .breadcrumb{
+                display: none;
+    }
 }

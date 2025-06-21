@@ -8,28 +8,48 @@
     <link rel="stylesheet" href="all.css">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+
+        .product-main-img{
+            display: none;
+            
+            aspect-ratio:1/1;
+            vertical-align:bottom;
+        }
+
+        .product-main-img img{
+            width: 100%;
+        }
+
+
         .product-page {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            width: 1200px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            flex-direction: row-reverse;
+            max-width: var(--total-width);
+            width:100%;
             margin: 50px auto;
+            gap: 50px;
+        }
+        
+        .product-images{
+            max-width: 600px;
+            overflow: hidden;
         }
 
         .product-images img {
             width: 100%;
-            margin: 0;
-            padding: 0;
-            border-radius: 8px;
         }
 
         .product-info {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 25px;
+            position: sticky;
+            top: 100px;      
         }
 
-        .price {
+        .current-price {
             font-size: 30px;
             font-weight: bold;
             color: #F08B72;
@@ -37,9 +57,8 @@
 
         .original-price {
             text-decoration: line-through;
-            font-size: 16px;
             color: #888;
-            margin-left: 8px;
+            margin-left: 5px;
         }
         .line {
             width: 100%;
@@ -52,49 +71,43 @@
             border: 1px solid #ccc;
             background-color: white;
             cursor: pointer;
-            font-size: 16px;
-            margin-right: 8px;
+            margin-right: 5px;
             transition: all 0.2s ease;
         }
 
         .scent-btn.active {
-            background-color: #D3A17E;
+            background-color: #FFB661;
             color: white;
-            border-color: #D3A17E;
+            border-color: #FFB661;
         }
 
         .quantity-wrapper {
             display: flex;
+            justify-content: center;
             align-items: center;
             border: 1px solid #999;
             width: fit-content;
             padding: 4px 8px;
-            gap: 12px;
-            font-size: 18px;
+            gap: 15px;
         }
 
-        .qty-btn {
-            background: none;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            color: #333;
-        }
-
+        .qty-btn,
         #qty-num {
-            min-width: 20px;
-            text-align: center;
+        text-align: center;
+        font-size: 18px;
+        border: none;
+        background: none;
         }
 
         .button-group {
             display: flex;
-            gap: 16px;
+            gap: 15px;
         }
 
         .btn {
-            width: 200px;
+            width: 150px;
             padding: 12px 24px;
-            border: 2px solid #85A96E;
+            border: 1px solid #85A96E;
             cursor: pointer;
             font-weight: bold;
             transition: 0.3s;
@@ -116,19 +129,18 @@
         }
 
         .description p {
-            font-size: 14px;
-            line-height: 1.6;
+            font-size: 16px;
         }
 
         h2{
             color: #85A96E;
             margin-bottom: 50px;
-            line-height: 1.5;
         }
 
 
         .section-watching-you{
-            width: 1200px;
+            max-width: var(--total-width);
+            width: 100%;
             margin:50px auto; 
         }
 
@@ -137,79 +149,53 @@
             grid-template-columns: repeat(3,250px);
             justify-content: end;
             gap: 50px;
+        }
+
+        @media screen and (max-width: 430px) {
 
         }
 
-        .product-card {
-            position: relative;
-            text-align: center;
-            font-size: 16px;
-            transition: 0.3s ease;
-            border-radius: 20px;
+
+        @media screen and (max-width: 768px) {
+            .product-main-img{
+                display: block;
             }
 
-        .product-card:hover .img-wrap {
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-            transform: translateY(-4px);
-            transform: scale(1.05);
-            filter: brightness(1.15);
+            .product-page {
+                display: flex;
+                flex-direction: column;
+                max-width: var(--total-width);
+                width:100%;
+                padding: 0 20px;
+                gap: 25px;
+            }
+
+            .product-info {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .section-watching-you{
+            margin: 25px auto; 
+            padding: 0 10px;
+            text-align: center;
+            }
+
+            .product-list{
+                grid-template-columns: repeat(3,1fr);
+                gap: 10px;
+            }
+
+
+
         }
 
-        .img-wrap{
-            width: 100%;
-            aspect-ratio:1/1;
-            overflow: hidden;
-            border-radius: 20px;
-            margin-bottom: 8px; 
-        }
-
-        .product-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.95);
-            transition: 0.3s ease;
-            
-        }
-
-        .product-card:hover::after {
-            content: '👀';
-            position: absolute;
-            top: -24px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 18px;
-            opacity: 0.8;
-            animation: blink 1.5s infinite;
-        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html"><img src="./pic/logo.png" alt="Logo"></a>
-        </div>
-        
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#">全部商品</a></li>
-                <li><a href="new-arrivals.html">新品上市</a></li>
-                <li><a href="news.html">特級專區</a></li>
-                <li><a href="about.html">品牌故事</a></li>   
-            </ul>
-        </nav>
-
-        <div class="head-icon">
-            <a href="#" class="icon-member">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M24 20a7 7 0 1 0 0-14a7 7 0 0 0 0 14M6 40.8V42h36v-1.2c0-4.48 0-6.72-.872-8.432a8 8 0 0 0-3.496-3.496C35.92 28 33.68 28 29.2 28H18.8c-4.48 0-6.72 0-8.432.872a8 8 0 0 0-3.496 3.496C6 34.08 6 36.32 6 40.8"/></svg>    
-            </a>
-            <a href="#" class="icon-cart">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
-            <path fill="currentColor" fill-rule="evenodd" d="M3 2a1 1 0 0 0 0 2h1.074l.16 2.077l.616 8.017a3 3 0 0 0 3.205 2.762l10.355-.74a3 3 0 0 0 2.768-2.661l.816-7.345A1 1 0 0 0 21 5H6.157l-.16-2.077A1 1 0 0 0 5 2zm4 18.5A1.5 1.5 0 0 1 8.5 19h.01a1.5 1.5 0 0 1 1.5 1.5v.01a1.5 1.5 0 0 1-1.5 1.5H8.5a1.5 1.5 0 0 1-1.5-1.5zM17.5 19a1.5 1.5 0 0 0-1.5 1.5v.01a1.5 1.5 0 0 0 1.5 1.5h.01a1.5 1.5 0 0 0 1.5-1.5v-.01a1.5 1.5 0 0 0-1.5-1.5z" clip-rule="evenodd" />
-            </svg>
-            </a>
-        </div>
-    </header>
+    <div id="header"></div>
 
     <nav class="breadcrumb">
         <a href="index.html"><img src="./pic/home.png" alt="首頁" class="breadcrumb-icon">首頁</a>
@@ -221,58 +207,64 @@
         <span>暮暮光香氛蠟燭</span>
     </nav>
 
+
     <div class="product-page">
-        <div class="product-images">
+        <div class="product-main-img">
             <img src="./items/03_candle_wood-warmth.jpg" alt="商品圖片1">
-            <img src="./items/03_candle_wood-warmth-1.png" alt="商品圖片2">
-            <img src="./items/03_candle_wood-warmth-2.png" alt="商品圖片3">
         </div>
 
-        <div class="product-info">
-            <h3>暮暮光香氛蠟燭</h3>
-            <p class="price">
-            <span class="current-price">NT$990</span>
-            <span class="original-price">NT$1090</span>
-            </p>
-            <div class="line"></div>
-
-            <div class="scent-options">
-                <button class="scent-btn">草本調</button>
-                <button class="scent-btn">花香調</button>
-                <button class="scent-btn">甜香調</button>
-            </div>
-
-            <div class="quantity-wrapper">
-                <button class="qty-btn" id="minus">−</button>
-                <span id="qty-num">1</span>
-                <button class="qty-btn" id="plus">＋</button>
-            </div>
-
-
-            <div class="button-group">
-                <button class="btn outline">加入購物車</button>
-                <button class="btn filled">立即結帳</button>
-            </div>
-
-            <div class="line"></div>
-
-            <h4>商品描述</h4>
-            <div class="description">
-                <p>
-                    當火柴劃破靜謐的空氣， 幕幕光悄悄亮起——<br>
-                    琥珀玻璃盛裝著淡雅香氣，隨著燭火晃動，<br>
-                    像極了黃昏落在你窗邊的那道光。<br>
-                    放鬆、沉澱、或只是單純地，陪自己好好靜一會。<br>
-                    讓幕幕光，成為你生活中最溫柔的片刻。
+        <div class="product-info-wrapper">
+            <div class="product-info">
+                <h3>暮暮光香氛蠟燭</h3>
+                <p class="price">
+                <span class="current-price">NT$990</span>
+                <span class="original-price">NT$1090</span>
                 </p>
+                <div class="line"></div>
+
+                <div class="scent-options">
+                    <button class="scent-btn">草本調</button>
+                    <button class="scent-btn">花香調</button>
+                    <button class="scent-btn">甜香調</button>
+                </div>
+
+                <div class="quantity-wrapper">
+                    <button class="qty-btn" id="minus">−</button>
+                    <span id="qty-num">1</span>
+                    <button class="qty-btn" id="plus">＋</button>
+                </div>
+
+
+                <div class="button-group">
+                    <button class="btn outline">加入購物車</button>
+                    <button class="btn filled">立即結帳</button>
+                </div>
+
+                <div class="line"></div>
+
+                <h4>商品描述</h4>
+                <div class="description">
+                    <p>
+                        當火柴劃破靜謐的空氣， 幕幕光悄悄亮起——<br>
+                        琥珀玻璃盛裝著淡雅香氣，隨著燭火晃動，<br>
+                        像極了黃昏落在你窗邊的那道光。<br>
+                        放鬆、沉澱、或只是單純地，陪自己好好靜一會。<br>
+                        讓幕幕光，成為你生活中最溫柔的片刻。
+                    </p>
+                </div>
+                <div class="tag">
+                    <p>
+                        #幕幕光
+                        #香氛療癒
+                        #日日廢廢選物
+                    </p>
+                </div>
             </div>
-            <div class="tag">
-                <p>
-                    #幕幕光
-                    #香氛療癒
-                    #日日廢廢選物
-                </p>
-            </div>
+        </div>
+        <div class="product-images">
+            <img src="./items/03_candle_wood-warmth.jpg" alt="商品圖片1">
+            <img src="./items/03_candle_wood-warmth-1.jpg" alt="商品圖片2">
+            <img src="./items/03_candle_wood-warmth-2.jpg" alt="商品圖片3">
         </div>
     </div>
 
@@ -303,26 +295,10 @@
         </div>
     </section>
 
-    <footer class="site-footer">
-        <div class="footer-main">
-            <img src="./pic/logo.png" alt="logo">
-            <ul class="footer-nav">
-                <li><a href="about.html">品牌故事</a></li>
-                <li><a href="faq.html">Q&A</a></li>
-                <li><a href="#">隱私條款</a></li>
-                <li><a href="#">聯絡廢廢</a></li>
-            </ul>
-        </div>
-        <div class="footer-social">
-            <p class="footer-bottom">© 日日廢廢 2025. All rights reserved.</p>
-            <div class="footer-icon">
-            <a href="#"><img src="./pic/FB.png" alt="FB"></a>
-            <a href="#"><img src="./pic/IG.png" alt="IG"></a>
-            <a href="#"><img src="./pic/line.png" alt="LINE"></a>
-            </div>
-        </div>
-    </footer>
-
+    <div id="footer"></div>
+    
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./js/dayday.js"></script>
 <script>
     const buttons = document.querySelectorAll('.scent-btn');
 
@@ -352,6 +328,43 @@
         count++;
         qtyNum.textContent = count;
     });
+
+    function syncStickyHeight() {
+        if (window.innerWidth <= 768) {
+            return; // 不做事
+        }
+        const imageBox = document.querySelector('.product-images');
+        const stickyBox = document.querySelector('.product-info-wrapper');
+
+        if (imageBox && stickyBox) {
+        const updateHeight = () => {
+            stickyBox.style.height = imageBox.offsetHeight + 'px';
+        };
+
+        updateHeight(); // 初始呼叫
+
+        // 如果圖片還沒載完再監聽
+        const images = imageBox.querySelectorAll('img');
+        let loadedCount = 0;
+
+        images.forEach((img) => {
+            if (img.complete) {
+            loadedCount++;
+            } else {
+            img.onload = () => {
+                loadedCount++;
+                if (loadedCount === images.length) updateHeight();
+            };
+            }
+        });
+
+        // 縮放時也重新對齊
+        window.addEventListener('resize', updateHeight);
+        }
+    }
+
+    window.addEventListener('load', syncStickyHeight);
+
 </script>
 </body>
 </html>
