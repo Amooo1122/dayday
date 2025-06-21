@@ -11,6 +11,7 @@
         *{
             margin: 0;
             padding: 0;
+            outline: 1px solid #f00;
         }
         .about-contaioner{
             margin: auto;
@@ -28,90 +29,85 @@
 
         .about-banner__content {
             display: grid;
-            grid-template-columns: 1fr 500px;
+            grid-template-columns: 600px 1fr;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
+            max-width: var(--total-width);
             margin: 0 auto;
-            gap: 0px;
-            
+            text-align: center;
         }
 
-        .about-banner__text {
-        flex: 1;
-        line-height: 1.5;
-        white-space: nowrap;
-        }
-
-        .about-banner__image {
-        flex: 1;
-        text-align: right;
+        .about-banner__image{
+            width: 100%;
         }
 
         .about-banner__image img {
-        max-width: 100%;
-        height: auto;
+            width: 100%;
+            height: auto;
         }
 
         .about-concept {
-        padding: 80px 20px;
-        width: 1200px;
-        margin: auto;
+            max-width: var(--total-width);
+            width: 100%;
+            margin: auto;
         }
 
         .about-concept__container {
-        position: relative;
-        margin: 0 auto;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .about-concept__bg   img{
+            width: 100%;
         }
 
         .about-concept__text {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        padding: 20px 40px;
-        color: #fff;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 20px 40px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .about-concept__text h3 {
-        margin-bottom: 16px;
+            margin-bottom: 16px;
         }
 
         .about-concept__text p {
-        line-height: 1.8;
+            line-height: 1.8;
         }
 
         .about-concept__desc {
-        margin: 0 auto ;
-        padding: 20px 40px;
-        line-height: 1.8;
+            margin: 0 auto ;
+            padding: 20px 40px;
+            line-height: 1.8;
         }
 
-        .about-message {
+        .about-message{
             margin: auto;
             padding: 80px 20px;
-            width: 1200px;
+            max-width: var(--total-width);
         }
 
         .about-message__container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        justify-items: center;
-        align-items: center;
-        gap: 40px;
- 
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+            align-items: center;
+            gap: 40px;
         }
 
         .about-message__image img {
-        max-width: 100%;
+            max-width: 100%;
         }
 
         .about-message__text h3 {
-        margin-bottom: 24px;
-        line-height: 1.6;
-        }
+            margin-bottom: 24px;
+            line-height: 1.8;
+            }
 
         .about-message__text p,
         .about-philosophy__text p {
@@ -119,26 +115,26 @@
         }
 
         .about-philosophy {
-        width: 1200px;
-        margin: auto;
-        padding: 100px 20px;
+            max-width: var(--total-width);
+            margin: auto;
+            padding: 100px 20px;
         }
 
         .about-philosophy__container {
-        display: grid;
-        grid-template-columns: 1fr 600px;
-        justify-content: space-between;
-        align-items: center;
-        gap: 60px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
         }
 
         .about-philosophy__text h3 {
-        margin-bottom: 24px;
+            margin-bottom: 24px;
         }
 
         .about-philosophy_images {
-        position: relative;
-        height: 775px;
+            position: relative;
+            height: 775px;
         }
 
         .img-top {
@@ -157,23 +153,24 @@
 
         .img-top,
         .img-bottom {
-        width: 377px;
-        height: 488px;
-        object-fit: cover;
-        border-radius: 16px;
+            width: 377px;
+            aspect-ratio: 2 / 3;
+            /* height: 488px; */
+            object-fit: cover;
+            border-radius: 15px;
         }
 
         .about-breathing {
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        position: relative;
+            max-width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
         }
 
         .about-breathing__bg {
             width: 100%;
             height: 100%;
-            object-fit: cover;   /* 自動裁切填滿區塊 */
+            object-fit: cover;
             position: absolute;
             top: 0;
             left: 0;
@@ -188,21 +185,22 @@
         color: #fff;
         text-align: center;
         z-index: 1;
+        line-height: 1.8;
         }
 
         .about-ending {
-            padding: 100px 20px;
+            margin: 50px;
             text-align: center;
         }
 
         .about-ending__content p {
-            margin: 0 0 16px;
+            margin: 0 0 15px;
         }
 
         .ending-btn {
             display: inline-block;
-            margin-top: 24px;
-            padding: 8px 24px;
+            margin-top: 15px;
+            padding: 5px 10px;
             background-color: #E29E59;
             color: #fff;
             text-decoration: none;
@@ -210,63 +208,110 @@
             font-weight: bold;
             font-size: 1rem;
             transition: background-color 0.3s ease;
-            }
+        }
 
-            .ending-btn:hover {
+        .ending-btn:hover {
             background-color: #c57736;
+        }
+        @media screen and (max-width: 768px) {
+            .about-banner__content{
+                display: block;
             }
 
+            .about-banner__image{
+                display: none;
+            }
+
+            .about-concept__text{
+                padding:0 40px 20px;
+            }
+
+            .about-concept__bg {
+                position: relative;
+                z-index: 0;
+            }
+
+            .about-concept__bg .overlay {
+                position: absolute;
+                inset: 0;
+                background-color: rgba(0, 0, 0, 0.3); /* 遮罩透明度 */
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            .about-message__container {
+                gap: 20px;
+            }
+
+            .about-message__text p{
+                padding-left: 32px;
+            }
+
+            .about-philosophy {
+                padding: 0;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .about-philosophy__container {
+                display: block;
+                position: relative;
+                padding: 10px;
+                margin: 0 10px;
+            }
+
+            .about-philosophy_images{
+                position: static;
+            }
+
+            .about-philosophy__text p {
+                padding: 0;
+            }
+
+            .img-top,
+            .img-bottom {
+            width: 150px;
+            aspect-ratio: 2 / 3;
+            }
+
+            .img-top,
+            .img-bottom {
+            width: 150px;
+            aspect-ratio: 2 / 3;
+            }
+            
+            .about-philosophy_images{
+                height: auto;
+            }
+
+            .about-breathing__text {
+                line-height: 2;
+            }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html"><img src="./pic/logo.png" alt="Logo"></a>
-        </div>
-        
-        <nav class="main-nav">
-            <ul>
-                <li><a href="#">全部商品</a></li>
-                <li><a href="new-arrivals.html">新品上市</a></li>
-                <li><a href="news.html">特級專區</a></li>
-                <li><a href="about.html">品牌故事</a></li>   
-            </ul>
-        </nav>
-
-        <div class="head-icon">
-            <a href="#" class="icon-member">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 48 48"><path fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" d="M24 20a7 7 0 1 0 0-14a7 7 0 0 0 0 14M6 40.8V42h36v-1.2c0-4.48 0-6.72-.872-8.432a8 8 0 0 0-3.496-3.496C35.92 28 33.68 28 29.2 28H18.8c-4.48 0-6.72 0-8.432.872a8 8 0 0 0-3.496 3.496C6 34.08 6 36.32 6 40.8"/></svg>    
-            </a>
-            <a href="#" class="icon-cart">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24">
-            <path fill="currentColor" fill-rule="evenodd" d="M3 2a1 1 0 0 0 0 2h1.074l.16 2.077l.616 8.017a3 3 0 0 0 3.205 2.762l10.355-.74a3 3 0 0 0 2.768-2.661l.816-7.345A1 1 0 0 0 21 5H6.157l-.16-2.077A1 1 0 0 0 5 2zm4 18.5A1.5 1.5 0 0 1 8.5 19h.01a1.5 1.5 0 0 1 1.5 1.5v.01a1.5 1.5 0 0 1-1.5 1.5H8.5a1.5 1.5 0 0 1-1.5-1.5zM17.5 19a1.5 1.5 0 0 0-1.5 1.5v.01a1.5 1.5 0 0 0 1.5 1.5h.01a1.5 1.5 0 0 0 1.5-1.5v-.01a1.5 1.5 0 0 0-1.5-1.5z" clip-rule="evenodd" />
-            </svg>
-            </a>
-        </div>
-    </header>
+    <div id="header"></div>
     <div class="about-contaioner">
         <section class="about-banner">
-
             <div class="about-banner__content">
-                <div class="about-banner__text">
-                    <h1>
-                        <span class="highlight-o">日日</span>都是值得期待的形狀<br>
-                        <span class="highlight-g">廢廢</span>的也能被好好喜歡
-                    </h1>
-                </div>
+                <h1 class="about-banner__title">
+                    <span class="highlight-o">日日</span>都是值得期待的形狀<br>
+                    <span class="highlight-g">廢廢</span>的也可以被好好喜歡
+                </h1>
                 <div class="about-banner__image">
                 <img src="./pic/calendar.png" alt="日曆與手寫筆">
                 </div>
             </div>
-
-            <div class="about-banner__dots about-banner__dots--left"></div>
-            <div class="about-banner__dots about-banner__dots--right"></div>
         </section>
     </div>
 
     <section class="about-concept">
         <div class="about-concept__container">
-            <img src="./pic/bn-watch.png" alt="手錶" class="about-concept__bg">
+            <div class="about-concept__bg">
+                <div class="overlay"></div>
+                <img src="./pic/bn-watch.png" alt="手錶">
+            </div>
 
             <div class="about-concept__text">
                 <h3>為什麼是 <span class="highlight-g">「廢」</span></h3>
@@ -315,7 +360,7 @@
     <section class="about-philosophy">
         <div class="about-philosophy__container">
             <div class="about-philosophy__text">
-            <h3><span class="highlight-o">選</span>物哲學</h3>
+            <h3><span class="highlight-o">選物</span>哲學</h3>
             <p>
                 我們挑的東西，<br>
                 不一定實用，也不一定必要。<br><br>
@@ -335,8 +380,8 @@
             </div>
 
             <div class="about-philosophy_images">  
-                <img src="./items-web/02_figure_lucky-meow.webp" alt="貓咪杯子" class="img-top">
-                <img src="./items-web/01_lamp_moonlight-bubble.webp" alt="床邊燈" class="img-bottom">
+                <img src="./items/02_figure_lucky-meow.jpg" alt="貓咪杯子" class="img-top">
+                <img src="./items/01_lamp_moonlight-bubble.jpg" alt="床邊燈" class="img-bottom">
             </div>
         </div>
     </section>
@@ -344,11 +389,10 @@
     <section class="about-breathing">
         <img src="./pic/bn_airplane.png" alt="窗邊紙飛機" class="about-breathing__bg">
         <div class="about-breathing__text">
-            <p>你不需要很厲害<br>也可以不活的那麼用力</p>
-            <p>更真實的是在低能量時好好活著</p>
+            <p>你不需要很厲害<br>也可以不活的那麼用力<br>
+            更真實的是在低能量時好好活著<br>
             <p class="highlight-o">停下來</p>
             <p class="highlight-g">深呼吸</p>
-            <p>
             這是一個陪你緩慢<br>
             尋找微弱幸福也會有光線的地方<br>
             當你準備好了，我們就在彼此的光裡<br>
@@ -369,24 +413,9 @@
         </div>
     </section>
 
-    <footer class="site-footer">
-        <div class="footer-main">
-            <img src="./pic/logo.png" alt="logo">
-            <ul class="footer-nav">
-                <li><a href="about.html">品牌故事</a></li>
-                <li><a href="#">Q&A</a></li>
-                <li><a href="#">隱私條款</a></li>
-                <li><a href="#">聯絡廢廢</a></li>
-            </ul>
-        </div>
-        <div class="footer-social">
-            <p class="footer-bottom">© 日日廢廢 2025. All rights reserved.</p>
-            <div class="footer-icon">
-            <a href="#"><img src="./pic/FB.png" alt="FB"></a>
-            <a href="#"><img src="./pic/IG.png" alt="IG"></a>
-            <a href="#"><img src="./pic/line.png" alt="LINE"></a>
-            </div>
-        </div>
-    </footer>
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./js/dayday.js"></script>
 </body>
 </html>
