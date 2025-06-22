@@ -5,17 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>登入／註冊</title>
   <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="all.css">
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      background-color: #fdf7ef;
-      font-family: 'Zen Maru Gothic', sans-serif;
-    }
-
     .login-modal {
       background: #fff7ef;
       border-radius: 15px;
-      margin: 40px auto;
+      margin: 100px auto;
       max-width: 400px;
       box-shadow: 0 0 15px rgba(0,0,0,0.1);
       overflow: hidden;
@@ -41,12 +37,12 @@
     }
 
     .login-form {
-      padding: 30px;
+      margin: 30px;
     }
 
     .logo {
-      width: 100px;
-      margin: 0 auto 10px;
+      width: 150px;
+      margin: 0 auto 20px;
     }
 
     .logo img {
@@ -56,12 +52,13 @@
     .welcome-text {
       text-align: center;
       margin-bottom: 20px;
-      font-size: 16px;
+        font-size: 16px;
     }
 
     .login-form label {
+      width: 320px;
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     .login-form input[type="text"],
@@ -83,6 +80,17 @@
       margin: 10px 0;
     }
 
+    .options label{
+      width:200px;
+      margin: 0;
+    }
+
+    .forgot-password {
+      white-space: nowrap;
+      text-decoration: none;
+      color: inherit;
+    }
+
     .login-btn {
       width: 100%;
       padding: 10px;
@@ -91,8 +99,11 @@
       border: none;
       border-radius: 4px;
       font-weight: bold;
-      cursor: pointer;
       margin-top: 10px;
+    }
+
+    .login-btn:hover{
+      background-color:#FFB661;
     }
 
     .divider {
@@ -133,7 +144,8 @@
   </style>
 </head>
 <body>
-  <div class="login-modal">
+  <div id="header"></div>
+  <div class="login-modal" id="loginModal">
     <div class="login-tab">
       <button id="tabLogin" class="active">會員登入</button>
       <button id="tabRegister">註冊會員</button>
@@ -148,8 +160,10 @@
         <label><input type="password" id="loginPassword" placeholder="密碼"></label>
 
         <div class="options">
-          <label><input type="checkbox" id="rememberMe"> 記住帳號</label>
-          <a href="#">忘記密碼</a>
+          <label class="remember-label">
+            <input type="checkbox" id="rememberMe"> 記住帳號
+          </label>
+          <a href="#" class="forgot-password">忘記密碼</a>
         </div>
 
         <button type="submit" class="login-btn">登入</button>
@@ -182,7 +196,10 @@
     </div>
   </div>
 
+  <div id="footer"></div>
+
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="./js/dayday.js"></script>
   <script>
     // tab 切換
     $('#tabLogin').click(function () {
@@ -199,25 +216,6 @@
       $('#loginForm').hide();
     });
 
-    // 記住帳號功能
-    $(document).ready(function () {
-      if (localStorage.getItem('rememberedEmail')) {
-        $('#loginEmail').val(localStorage.getItem('rememberedEmail'));
-        $('#rememberMe').prop('checked', true);
-      }
-
-      $('#loginForm').on('submit', function (e) {
-        e.preventDefault();
-
-        if ($('#rememberMe').is(':checked')) {
-          localStorage.setItem('rememberedEmail', $('#loginEmail').val());
-        } else {
-          localStorage.removeItem('rememberedEmail');
-        }
-
-        alert('登入送出（模擬）');
-      });
-    });
   </script>
 </body>
 </html>
