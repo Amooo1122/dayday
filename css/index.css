@@ -151,9 +151,6 @@
         border-top-color: #EFE8DD; 
         border-radius: 4px;
     }
-
-
-    /* 加一點縮放效果（可選） */
     .slick-center img {
         filter: none;
     }
@@ -443,6 +440,14 @@
 
     .about-wrap h2{
         display: none;
+    }
+
+    .recommend-item a{
+        width: 300px;
+        font-size: 16px;
+        justify-content: space-between;
+        padding-left: 15px;
+        gap: 10px;
     }
     
 }

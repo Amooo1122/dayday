@@ -40,19 +40,11 @@
       margin: 30px;
     }
 
-    .logo {
-      width: 150px;
-      margin: 0 auto 20px;
-    }
-
-    .logo img {
-      width: 100%;
-    }
 
     .welcome-text {
       text-align: center;
-      margin-bottom: 20px;
-        font-size: 16px;
+      margin: 30px;
+      font-size: 20px;
     }
 
     .login-form label {
@@ -78,11 +70,6 @@
       align-items: center;
       font-size: 14px;
       margin: 10px 0;
-    }
-
-    .options label{
-      width:200px;
-      margin: 0;
     }
 
     .forgot-password {
@@ -138,7 +125,7 @@
       }
 
       .login-form {
-        padding: 20px;
+        margin: 20px;
       }
     }
   </style>
@@ -153,8 +140,7 @@
 
     <div class="form-container">
       <form id="loginForm" class="login-form">
-        <div class="logo"><img src="./pic/logo.png" alt="logo"></div>
-        <p class="welcome-text">歡迎回來，今天也要一起廢廢的嗎？</p>
+        <p class="welcome-text">歡迎回來<br>今天也要一起廢廢的嗎？</p>
 
         <label><input type="text" id="loginEmail" placeholder="Email"></label>
         <label><input type="password" id="loginPassword" placeholder="密碼"></label>
@@ -176,7 +162,6 @@
       </form>
 
       <form id="registerForm" class="login-form" style="display: none;">
-        <div class="logo"><img src="./pic/logo.png" alt="logo"></div>
         <p class="welcome-text">加入我們，一起耍廢放空</p>
 
         <label><input type="text" placeholder="姓名"></label>

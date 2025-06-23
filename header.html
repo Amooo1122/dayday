@@ -50,6 +50,9 @@
             z-index: 999;          
         }
 
+        .logo{
+            margin-bottom:0 ;
+        }
 
         .logo img{
             width: 100%;
@@ -87,9 +90,68 @@
             gap: 20px;
         }
 
-        .icon-hamBar{
+        .hb {
+            width: 25px;
+            height: 20px;
+            cursor: pointer;
             display: none;
+            position: relative;
+            margin: auto 0;
+            justify-items: start;
         }
+
+        .hb::after{
+            content: "";
+            height: 2px;
+            width: 100%;
+            top: 8px;
+            background-color: #423E37;
+            display: block;
+            position: absolute;
+            transition: 0.3s;
+        }
+
+        .hb-line{
+                width: 100%;
+                height: 20px;
+                display: block;
+                position: absolute;
+        }
+
+        .hb-line::before,
+        .hb-line::after {
+            content: "";
+            height: 2px;
+            width: 100%;
+            background-color: #423E37;
+            display: block;
+            position: absolute;
+            transition: 0.5s;
+        }
+
+        .hb.shownav::after {
+            opacity: 0;
+        }
+
+        .hb.shownav>.hb-line:before {
+            transform: translateY(9px) rotate(-50deg);
+            transition: 0.5s ease-in-out;
+        }
+
+        .hb.shownav>.hb-line::after {
+            transform: translateY(-9px) rotate(50deg);
+            transition: 0.5s ease-in-out;
+        }
+
+        .hb-line::before {
+            top: 0;
+        }
+
+        .hb-line::after {
+            bottom: 0;
+        }
+
+        
 
         @media screen and (max-width: 768px) {
 
@@ -97,13 +159,13 @@
             grid-template-columns:120px 1fr;
             }
 
-            .icon-hamBar {
-                display: flex;
-            }
-            
+            .hb {
+            display: block;
+            }   
+
             .main-nav{
                 position: fixed;
-                top: 100px;
+                top: 70px;
                 right: -100%;
                 height: 100vh;
                 background-color: #F4E5D0;
@@ -112,7 +174,7 @@
                 transition: right 0.3s ease;
             }
 
-            nav.main-nav.open {
+            .main-nav.open {
                 right: 0;
             }
             
@@ -147,39 +209,10 @@
                             <li class="submenu-item"><a href="shopall.html">全部商品</a></li>
                             <li class="submenu-item"><a href="shopall.html?category=本月新品">本月新品</a></li>
                             <li class="submenu-item"><a href="shopall.html?category=熱銷推薦">熱銷推薦</a></li>
-                            <li class="submenu-item has-submenu">
-                                <a href="shopall.html?category=日常系" class="submenu-toggle">日常系</a>
-                                <ul class="sub-submenu-list">
-                                <li class="sub-submenu-item"><a href="#">毛茸茸</a></li>
-                                <li class="sub-submenu-item"><a href="#">辦公雜貨</a></li>
-                                <li class="sub-submenu-item"><a href="#">造型燈</a></li>
-                                </ul>
-                            </li>
-                            <li class="submenu-item has-submenu">
-                                <a href="shopall.html?category=香香系" class="submenu-toggle">香香系</a>
-                                <ul class="sub-submenu-list">
-                                <li class="sub-submenu-item"><a href="#">香氛蠟燭</a></li>
-                                <li class="sub-submenu-item"><a href="#">擴香石</a></li>
-                                <li class="sub-submenu-item"><a href="#">香氛機</a></li>
-                                </ul>
-                            </li>
-                            <li class="submenu-item has-submenu">
-                                <a href="shopall.html?category=儀式感系" class="submenu-toggle">儀式感系</a>
-                                <ul class="sub-submenu-list">
-                                <li class="sub-submenu-item"><a href="#">小廢物</a></li>
-                                <li class="sub-submenu-item"><a href="#">桌面擺飾</a></li>
-                                <li class="sub-submenu-item"><a href="#">造型收納</a></li>
-                                </ul>
-                            </li>
-                            <li class="submenu-item has-submenu">
-                                <a href="shopall.html?category=送禮企劃" class="submenu-toggle">送禮企劃</a>
-                                <ul class="sub-submenu-list">
-                                <li class="sub-submenu-item"><a href="#">送給他</a></li>
-                                <li class="sub-submenu-item"><a href="#">送給她</a></li>
-                                <li class="sub-submenu-item"><a href="#">生日快樂</a></li>
-                                </ul>
-                            </li>
-                        
+                            <li class="submenu-item"><a href="shopall.html?category=日常系">日常系</a></li>
+                            <li class="submenu-item"><a href="shopall.html?category=香香系">香香系</a></li>
+                            <li class="submenu-item"><a href="shopall.html?category=儀式感系">儀式感系</a></li>
+                            <li class="submenu-item"><a href="shopall.html?category=送禮企劃">送禮企劃</a></li>
                         </ul>
                     </div>
                     </li>
@@ -197,11 +230,10 @@
             <path fill="currentColor" fill-rule="evenodd" d="M3 2a1 1 0 0 0 0 2h1.074l.16 2.077l.616 8.017a3 3 0 0 0 3.205 2.762l10.355-.74a3 3 0 0 0 2.768-2.661l.816-7.345A1 1 0 0 0 21 5H6.157l-.16-2.077A1 1 0 0 0 5 2zm4 18.5A1.5 1.5 0 0 1 8.5 19h.01a1.5 1.5 0 0 1 1.5 1.5v.01a1.5 1.5 0 0 1-1.5 1.5H8.5a1.5 1.5 0 0 1-1.5-1.5zM17.5 19a1.5 1.5 0 0 0-1.5 1.5v.01a1.5 1.5 0 0 0 1.5 1.5h.01a1.5 1.5 0 0 0 1.5-1.5v-.01a1.5 1.5 0 0 0-1.5-1.5z" clip-rule="evenodd" />
             </svg>
             </a>
-            <a href="" class="icon-hamBar">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 16 16">
-            <path fill="currentColor" d="M2 3.75A.75.75 0 0 1 2.75 3h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 3.75m0 4A.75.75 0 0 1 2.75 7h10.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 7.75m0 4a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75"/>
-            </svg>
-            </a>
+
+            <div class="hb unclick">
+                <span class="hb-line"></span>
+            </div>
         </div>
     </header>
     <script src="./js/jQuery_3.7.1.js"></script>
@@ -216,22 +248,20 @@
                 $submenu.slideToggle();
             });
 
-            $('.submenu-toggle').on('click', function(e) {
-                let $subSubmenu = $(this).next('.sub-submenu-list');
-                $('.sub-submenu-list').not($subSubmenu).slideUp(); // 收起其他孫子選單
-                $subSubmenu.slideToggle();
-            });
-
-            // 點擊文件其他地方收起所有選單
             $(document).on('click', function(e) {
-                if (!$(e.target).closest('.main-nav').length) {
+                if (!$(e.target).closest('.main-nav, .icon-hamBar').length) {
                     $('.submenu-list, .sub-submenu-list').slideUp();
+                    $('nav.main-nav').removeClass('open');
                 }
             });
 
-            $('.icon-hamBar').on('click', function (e) {
-                e.preventDefault();
-                $('nav.main-nav').toggleClass('open');
+            $('.hb').on('click', function (e) {
+                e.stopPropagation();
+                let unclick = $(this).hasClass("unclick")
+                if ($(this).hasClass("unclick")) {
+                $(this).toggleClass("shownav");
+                $('.main-nav').toggleClass('open');
+                }
             });
 
             // 固定 header

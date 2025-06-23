@@ -300,8 +300,9 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="./js/dayday.js"></script>
 <script>
-    const buttons = document.querySelectorAll('.scent-btn');
 
+    //選香味
+    const buttons = document.querySelectorAll('.scent-btn');
     buttons.forEach(button => {
         button.addEventListener('click', () => {
         // 先移除所有按鈕的 active
@@ -311,6 +312,7 @@
         });
     });
 
+    //數量控制
     const minusBtn = document.getElementById('minus');
     const plusBtn = document.getElementById('plus');
     const qtyNum = document.getElementById('qty-num');

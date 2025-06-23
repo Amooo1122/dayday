@@ -135,9 +135,9 @@ a:hover{
         --total-width: 748px;
     }
 
-    body{
+    /* body{
         font-size: 16px;
-    }
+    } */
 
     h1 {
         font-size: 1.75rem;
@@ -148,7 +148,7 @@ a:hover{
     }
 
     h3 {
-        font-size: 20px;
+        font-size: 25px;
     }
     
     p{
