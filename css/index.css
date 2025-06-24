@@ -187,7 +187,6 @@
     .btn-icon::after {
         content: "";
         position: absolute;
-        ;
         inset: 0;
         background-image: url(../pic/btn_g2.png);
         background-size: cover;
@@ -369,9 +368,8 @@
         top: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
-        width: 80%; /* 可視需要調整，避免太寬溢出 */
+        width: 80%;
         line-height: 1.8;
-        /* letter-spacing: 1.5px;  */
     }
 
     .notes p{
@@ -380,8 +378,8 @@
 
     .notes-text .highlight-o,
     .notes-text .highlight-g {
-    display: block;  /* 讓它變獨立一行 */
-    margin: 20px 0;  /* 上下空白 */
+    display: block;
+    margin: 20px 0;
     font-size: 22px;
     font-weight: bold;
     }
@@ -458,6 +456,6 @@
     }
 
     .notes{
-         font-size: 14px;
+        font-size: 14px;
     }
 }

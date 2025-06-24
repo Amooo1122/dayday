@@ -212,7 +212,6 @@
                             <li class="submenu-item"><a href="shopall.html?category=日常系">日常系</a></li>
                             <li class="submenu-item"><a href="shopall.html?category=香香系">香香系</a></li>
                             <li class="submenu-item"><a href="shopall.html?category=儀式感系">儀式感系</a></li>
-                            <li class="submenu-item"><a href="shopall.html?category=送禮企劃">送禮企劃</a></li>
                         </ul>
                     </div>
                     </li>
@@ -244,7 +243,7 @@
                 e.preventDefault();
                 e.stopPropagation();
                 let $submenu = $(this).next('.submenu-list');
-                $('.submenu-list').not($submenu).slideUp(); // 收起其他子選單
+                $('.submenu-list').not($submenu).slideUp(); 
                 $submenu.slideToggle();
             });
 

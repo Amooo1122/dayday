@@ -1,4 +1,3 @@
-//動態載入 header
     $(document).ready(function() {
             $("#header").load("header.html");
             $("#footer").load("footer.html");
@@ -39,8 +38,6 @@
 
         function addBalloon() {
             $('.product-balloon').remove();
-
-            // 直接抓 slick-center，因為你用 slide: '.product-card'
             let centerCard = $('.slick-center');
 
             if (centerCard.length) {
@@ -57,11 +54,8 @@
 
         $('.new-items').on('init afterChange', addBalloon);
 
-
         const $items = $(".recommend-item");
         const $mainImg = $("#mainImage");
-
-        // 抓取所有圖片路徑
         const imgList = $items.map(function () {
             return $(this).data("img");
         }).get();
@@ -85,10 +79,8 @@
             clearInterval(timer);
         }
 
-        // 啟動輪播
         startSlideshow();
 
-        // 滑鼠事件：hover 時停止輪播＋切圖
         $items.hover(
             function () {
             stopSlideshow();
