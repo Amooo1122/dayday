@@ -38,12 +38,15 @@
 
     .login-form {
       margin: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
 
     .welcome-text {
       text-align: center;
-      margin: 30px;
+      margin:0 30px 30px;
       font-size: 20px;
     }
 
@@ -53,23 +56,29 @@
       margin-bottom: 20px;
     }
 
-    .login-form input[type="text"],
-    .login-form input[type="password"],
-    .login-form input[type="tel"],
-    .login-form input[type="email"],
-    .login-form input[type="date"] {
+    .form-inputs{
       width: 100%;
       padding: 8px;
-      border: 2px solid #f2c89c;
+      border: 2px solid #eee;
       border-radius: 5px;
     }
 
+    .form-inputs:focus {
+        outline: none;
+        border: 2px solid #FFB661;
+    }
+
     .options {
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-size: 14px;
       margin: 10px 0;
+    }
+
+    .options .remember-label{
+      margin-bottom: 0;
     }
 
     .forgot-password {
@@ -142,8 +151,8 @@
       <form id="loginForm" class="login-form">
         <p class="welcome-text">歡迎回來<br>今天也要一起廢廢的嗎？</p>
 
-        <label><input type="text" id="loginEmail" placeholder="Email"></label>
-        <label><input type="password" id="loginPassword" placeholder="密碼"></label>
+        <label><input type="text" id="loginEmail" class="form-inputs" placeholder="Email"></label>
+        <label><input type="password" id="loginPassword" class="form-inputs" placeholder="密碼"></label>
 
         <div class="options">
           <label class="remember-label">
@@ -164,11 +173,11 @@
       <form id="registerForm" class="login-form" style="display: none;">
         <p class="welcome-text">加入我們，一起耍廢放空</p>
 
-        <label><input type="text" placeholder="姓名"></label>
-        <label><input type="tel" placeholder="手機號碼"></label>
-        <label><input type="email" placeholder="Email"></label>
-        <label><input type="password" placeholder="密碼"></label>
-        <label><input type="password" placeholder="再次輸入密碼"></label>
+        <label><input type="text" class="form-inputs" placeholder="姓名"></label>
+        <label><input type="tel" class="form-inputs" placeholder="手機號碼"></label>
+        <label><input type="email" class="form-inputs" placeholder="Email"></label>
+        <label><input type="password" class="form-inputs" placeholder="密碼"></label>
+        <label><input type="password" class="form-inputs" placeholder="再次輸入密碼"></label>
 
         <button type="submit" class="login-btn">註冊</button>
 
